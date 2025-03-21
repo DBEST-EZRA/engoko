@@ -1,0 +1,37 @@
+.hero-section {
+  background: url("/public/cover.png") center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-section h1,
+.hero-section p {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-btn {
+  background-color: #890010;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-btn:hover {
+  background-color: #a50012;
+}

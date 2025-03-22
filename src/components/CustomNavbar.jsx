@@ -51,6 +51,20 @@ const CustomNavbar = () => {
               About Us
             </Nav.Link>
             <Nav.Link
+              href="/about"
+              style={{ color: "#890010" }}
+              className="mx-2 nav-hover"
+            >
+              Our Team
+            </Nav.Link>
+            <Nav.Link
+              href="/about"
+              style={{ color: "#890010" }}
+              className="mx-2 nav-hover"
+            >
+              Blogs
+            </Nav.Link>
+            <Nav.Link
               href="/contact"
               style={{ color: "#890010" }}
               className="mx-2 nav-hover"

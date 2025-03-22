@@ -1,14 +1,10 @@
 import "./App.css";
-import CustomNavbar from "./components/CustomNavbar";
-import Footer from "./components/Footer";
-import HeroSection from "./components/HeroSection";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <CustomNavbar />
-      <HeroSection />
-      <Footer />
+      <Home />
     </div>
   );
 }

@@ -10,13 +10,13 @@ const Contact = () => {
           <strong>Location:</strong> Mashauri, Kisii Town, Kenya
         </p>
         <p>
-          <strong>Phone:</strong> +254 712 345 678
+          <strong>Phone:</strong> +254 710 831 806
         </p>
         <p>
           <strong>Email:</strong> info@engoko.com
         </p>
         <p>
-          <strong>Business Hours:</strong> Monday - Saturday: 8:00 AM - 6:00 PM
+          <strong>Business Hours:</strong> Monday - Saturday: 7:00 AM - 6:00 PM
         </p>
       </div>
 

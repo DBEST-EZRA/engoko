@@ -1,0 +1,40 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start; /* Aligns text content to the left */
+}
+
+.contact-details {
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left; /* Align text content left */
+  width: 100%;
+}
+
+.contact-details h2 {
+  color: #890010;
+}
+
+.contact-map iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+  /* Force side-by-side on laptops */
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-details,
+  .contact-map {
+    flex: 1;
+    max-width: 48%; /* Adjust to make side-by-side with spacing */
+  }
+}

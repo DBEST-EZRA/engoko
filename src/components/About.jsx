@@ -3,6 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import CountUp from "react-countup";
 import { Container, Row, Col } from "react-bootstrap";
+import one from "./image/1.jpeg";
+import two from "./image/2.jpeg";
+import three from "./image/3.jpeg";
 
 const About = () => {
   useEffect(() => {
@@ -27,7 +30,7 @@ const About = () => {
           </Col>
           <Col md={6} data-aos="fade-left">
             <img
-              src="/images/about-engoko.jpg"
+              src={one}
               alt="About Engoko"
               className="img-fluid rounded shadow"
             />
@@ -91,7 +94,7 @@ const About = () => {
           </Col>
           <Col md={6} data-aos="fade-right">
             <img
-              src="/images/mission.jpg"
+              src={two}
               alt="Our Mission"
               className="img-fluid rounded shadow"
             />
@@ -111,7 +114,7 @@ const About = () => {
           </Col>
           <Col md={6} data-aos="fade-left">
             <img
-              src="/images/impact.jpg"
+              src={three}
               alt="Our Impact"
               className="img-fluid rounded shadow"
             />

@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { FaEgg, FaSeedling, FaChalkboardTeacher } from "react-icons/fa"; // Import FA icons
+import "./Services.css";
 
 const Services = () => {
   return (
@@ -9,14 +11,12 @@ const Services = () => {
           Our Services
         </h2>
         <Row>
-          {/* Service 1 */}
+          {/* Service 1 - Day-Old Chicks */}
           <Col md={4} className="mb-4">
-            <Card className="h-100 border-0 shadow">
-              <Card.Img
-                variant="top"
-                src="/images/day-old-chicks.jpg"
-                alt="Day-Old Chicks"
-              />
+            <Card className="h-100 border-0 shadow text-center p-4">
+              <div className="icon-container mx-auto">
+                <FaEgg className="service-icon" />
+              </div>
               <Card.Body>
                 <Card.Title>Day-Old Chicks</Card.Title>
                 <Card.Text>
@@ -27,14 +27,12 @@ const Services = () => {
             </Card>
           </Col>
 
-          {/* Service 2 */}
+          {/* Service 2 - Poultry Feed */}
           <Col md={4} className="mb-4">
-            <Card className="h-100 border-0 shadow">
-              <Card.Img
-                variant="top"
-                src="/images/poultry-feed.jpg"
-                alt="Poultry Feed"
-              />
+            <Card className="h-100 border-0 shadow text-center p-4">
+              <div className="icon-container mx-auto">
+                <FaSeedling className="service-icon" />
+              </div>
               <Card.Body>
                 <Card.Title>Poultry Feed</Card.Title>
                 <Card.Text>
@@ -45,14 +43,12 @@ const Services = () => {
             </Card>
           </Col>
 
-          {/* Service 3 */}
+          {/* Service 3 - Farmer Training */}
           <Col md={4} className="mb-4">
-            <Card className="h-100 border-0 shadow">
-              <Card.Img
-                variant="top"
-                src="/images/training.jpg"
-                alt="Farmer Training"
-              />
+            <Card className="h-100 border-0 shadow text-center p-4">
+              <div className="icon-container mx-auto">
+                <FaChalkboardTeacher className="service-icon" />
+              </div>
               <Card.Body>
                 <Card.Title>Farmer Training</Card.Title>
                 <Card.Text>

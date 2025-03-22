@@ -1,14 +1,14 @@
 .hero-section {
-  background: url("/public/cover.png") center/cover no-repeat;
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-section::before {
-  content: "";
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,7 +18,8 @@
 }
 
 .hero-section h1,
-.hero-section p {
+.hero-section p,
+.hero-btn {
   position: relative;
   z-index: 2;
 }

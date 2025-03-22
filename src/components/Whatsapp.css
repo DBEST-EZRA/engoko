@@ -1,0 +1,20 @@
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #890010; /* Your Burgundy Color */
+  width: 47px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+
+.whatsapp-btn:hover {
+  background-color: #a50012; /* Slightly lighter burgundy */
+}

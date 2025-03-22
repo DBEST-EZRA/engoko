@@ -4,6 +4,7 @@ import Services from "./Services";
 import Testimonials from "./Testimonial";
 import AgentFarmerBanner from "./AgentFarmerBanner";
 import FAQs from "./FAQs";
+import WhatsAppButton from "./WhatsappButton";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <AgentFarmerBanner />
       <Testimonials />
       <FAQs />
+      <WhatsAppButton />
     </div>
   );
 };

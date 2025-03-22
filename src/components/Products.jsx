@@ -1,46 +1,54 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import one from "./image/a1.webp";
+import two from "./image/a2.webp";
+import three from "./image/a3.webp";
+import four from "./image/a4.webp";
+import five from "./image/a5.webp";
+import six from "./image/a1.webp";
+import seven from "./image/a3.webp";
+import eight from "./image/a4.webp";
 
 const products = [
   {
     name: "128 Eggs Double Function Incubator",
     price: "KSh 25,000",
-    image: "/images/incubator1.jpg",
+    image: one,
   },
   {
     name: "192 Eggs Automatic Egg Incubator",
     price: "KSh 30,000",
-    image: "/images/incubator2.jpg",
+    image: two,
   },
   {
     name: "264 Fully Automatic Egg Incubator",
     price: "KSh 35,000",
-    image: "/images/incubator3.jpg",
+    image: three,
   },
   {
     name: "528 Brand New Automatic Egg Incubator",
     price: "KSh 50,000",
-    image: "/images/incubator4.jpg",
+    image: four,
   },
   {
     name: "1056 Fully Automated Egg Incubator",
     price: "KSh 80,000",
-    image: "/images/incubator5.jpg",
+    image: five,
   },
   {
     name: "Solar Egg Incubators",
     price: "KSh 40,000",
-    image: "/images/incubator6.jpg",
+    image: six,
   },
   {
     name: "128 Egg Incubators with Temperature Control",
     price: "KSh 28,000",
-    image: "/images/incubator7.jpg",
+    image: seven,
   },
   {
     name: "Modern 128 Eggs Hatchery AC/DC Incubator",
     price: "KSh 32,000",
-    image: "/images/incubator8.jpg",
+    image: eight,
   },
 ];
 

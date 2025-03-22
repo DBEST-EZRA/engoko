@@ -3,19 +3,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container } from "react-bootstrap";
 import "./Gallery.css";
+import one from "./image/1.jpeg";
+import two from "./image/2.jpeg";
+import three from "./image/3.jpeg";
+import four from "./image/4.jpeg";
+import five from "./image/5.jpeg";
+import six from "./image/6.jpeg";
+import seven from "./image/7.jpeg";
+import eight from "./image/8.jpeg";
+import nine from "./image/9.jpeg";
+import ten from "./image/10.jpeg";
 
-const images = [
-  "/images/gallery1.jpg",
-  "/images/gallery2.jpg",
-  "/images/gallery3.jpg",
-  "/images/gallery4.jpg",
-  "/images/gallery5.jpg",
-  "/images/gallery6.jpg",
-  "/images/gallery7.jpg",
-  "/images/gallery8.jpg",
-  "/images/gallery9.jpg",
-  "/images/gallery10.jpg",
-];
+const images = [one, two, three, four, five, six, seven, eight, nine, ten];
 
 const Gallery = () => {
   useEffect(() => {

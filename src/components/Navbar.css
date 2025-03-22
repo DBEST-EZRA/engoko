@@ -1,0 +1,38 @@
+/* Improved Navbar Links */
+.nav-hover {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #890010 !important;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-hover::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #890010;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+.nav-hover:hover {
+  color: #a50012 !important;
+}
+
+/* Announcement Bar */
+.announcement-bar a {
+  transition: color 0.3s;
+}
+
+.announcement-bar a:hover {
+  color: #f8d7da;
+}

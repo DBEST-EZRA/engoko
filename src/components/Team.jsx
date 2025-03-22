@@ -2,27 +2,31 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import one from "./image/t1.png";
+import two from "./image/t3.jpg";
+import three from "./image/t2.jpg";
+import four from "./image/t4.jpeg";
 
 const teamMembers = [
   {
-    name: "John Mwangi",
+    name: "Sam",
     title: "Founder & CEO",
-    image: "/images/team1.jpg",
+    image: one,
   },
   {
     name: "Aisha Mohammed",
     title: "Operations Manager",
-    image: "/images/team2.jpg",
+    image: two,
   },
   {
-    name: "Samuel Otieno",
+    name: "Thomas",
     title: "Lead Veterinarian",
-    image: "/images/team3.jpg",
+    image: three,
   },
   {
     name: "Grace Wanjiru",
     title: "Marketing Director",
-    image: "/images/team4.jpg",
+    image: four,
   },
 ];
 

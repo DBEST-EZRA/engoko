@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Button, Carousel } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import cover1 from "./cover1.png";
+import cover1 from "./image/covernew.png";
 import cover2 from "./cover2.png";
 
 const HeroSection = () => {

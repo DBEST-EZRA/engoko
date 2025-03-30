@@ -227,7 +227,10 @@ const CartHeader = () => {
           {cartItems.length > 0 && (
             <div className="text-center mt-4">
               <h5>Grand Total: KSh {grandTotal.toLocaleString()}</h5>
-              <Button variant="success" className="w-100 mt-2">
+              <Button
+                style={{ backgroundColor: "#800020", borderColor: "#800020" }}
+                className="w-100 mt-2"
+              >
                 Checkout
               </Button>
             </div>

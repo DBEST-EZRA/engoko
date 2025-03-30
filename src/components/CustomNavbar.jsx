@@ -2,8 +2,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { useState, useEffect } from "react";
+
+const messages = ["Payment on Delivery", "Secure and Reliable"];
 
 const CustomNavbar = () => {
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* Announcement Bar */}
@@ -11,39 +23,47 @@ const CustomNavbar = () => {
         style={{
           backgroundColor: "#890010",
           color: "#fff",
-          textAlign: "center",
-          padding: "10px 0",
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
-          gap: "15px",
-          fontSize: "14px",
+          padding: "10px 20px",
         }}
       >
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#fff" }}
+        <div style={{ display: "flex", gap: "15px" }}>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#fff" }}
+          >
+            <FaInstagram size={20} />
+          </a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#fff" }}
+          >
+            <FaFacebookF size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#fff" }}
+          >
+            <FaLinkedinIn size={20} />
+          </a>
+        </div>
+        <div
+          style={{
+            flex: 1,
+            textAlign: "center",
+            fontSize: "14px",
+            fontWeight: "bold",
+          }}
         >
-          <FaInstagram size={20} />
-        </a>
-        <a
-          href="https://www.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#fff" }}
-        >
-          <FaFacebookF size={20} />
-        </a>
-        <a
-          href="https://www.linkedin.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#fff" }}
-        >
-          <FaLinkedinIn size={20} />
-        </a>
+          {messages[currentMessageIndex]}
+        </div>
       </div>
 
       {/* Navbar */}

@@ -105,6 +105,11 @@ const CustomNavbar = () => {
                   key={index}
                   href={item.link}
                   className="mx-2 nav-hover"
+                  style={{
+                    fontWeight: "bold",
+                    textTransform: "uppercase",
+                    fontFamily: "sans-serif",
+                  }}
                 >
                   {item.name}
                 </Nav.Link>

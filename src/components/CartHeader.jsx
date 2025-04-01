@@ -11,6 +11,7 @@ import {
   doc,
   addDoc,
   setDoc,
+  getDocs,
   deleteDoc,
   collection,
   query,
@@ -28,6 +29,9 @@ const CartHeader = () => {
   const [orderCount, setOrderCount] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showCheckedOutOrders, setShowCheckedOutOrders] = useState(false);
+  const [orderList, setOrderList] = useState([]);
+  const [checkedOutOrderCount, setCheckedOutOrderCount] = useState(0);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -122,6 +126,32 @@ const CartHeader = () => {
     setLoading(false);
   };
 
+  // Fetch Orders for Logged-in User
+  const fetchCheckedOutOrders = async () => {
+    if (!user) return;
+
+    try {
+      const ordersRef = collection(db, "orders");
+      const q = query(ordersRef, where("userEmail", "==", user.email));
+      const querySnapshot = await getDocs(q);
+
+      const fetchedOrders = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      setOrderList(fetchedOrders);
+      setCheckedOutOrderCount(fetchedOrders.length);
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
+  };
+
+  const handleShowCheckedOutOrders = () => {
+    fetchCheckedOutOrders();
+    setShowCheckedOutOrders(true);
+  };
+
   ///////////////////////
   ///////////////////////
   ///////////////////////
@@ -192,7 +222,11 @@ const CartHeader = () => {
           </>
         ) : (
           <>
-            <FaUser className="icon small-icon" title="Login" />
+            <FaUser
+              className="icon small-icon"
+              title="Login"
+              onClick={handleGoogleSignIn}
+            />
             <div
               className="small-text link-text"
               onClick={handleGoogleSignIn}
@@ -206,7 +240,11 @@ const CartHeader = () => {
 
       {/* Cart Icon */}
       <div className="text-center position-relative">
-        <FaShoppingCart className="icon small-icon" title="Cart" />
+        <FaShoppingCart
+          className="icon small-icon"
+          title="Cart"
+          onClick={() => setShowCart(true)}
+        />
         <Badge
           bg="danger"
           className="position-absolute top-0 start-100 translate-middle"
@@ -224,14 +262,23 @@ const CartHeader = () => {
 
       {/* Orders Icon */}
       <div className="text-center position-relative">
-        <FaClipboardList className="icon small-icon" title="My Orders" />
+        <FaClipboardList
+          className="icon small-icon"
+          title="My Orders"
+          onClick={handleShowCheckedOutOrders}
+        />
         <Badge
           bg="danger"
           className="position-absolute top-0 start-100 translate-middle"
         >
-          {orderCount}
+          {checkedOutOrderCount}
         </Badge>
-        <div className="small-text">Orders</div>
+        <div
+          className="small-text link-text"
+          onClick={handleShowCheckedOutOrders}
+        >
+          Orders
+        </div>
       </div>
 
       {/* Cart Drawer */}
@@ -356,6 +403,47 @@ const CartHeader = () => {
             </Button>
           </Form>
         </Modal.Body>
+      </Modal>
+
+      {/* Orders Modal */}
+      <Modal
+        show={showCheckedOutOrders}
+        onHide={() => setShowCheckedOutOrders(false)}
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>My Checked-Out Orders</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {orderList.length === 0 ? (
+            <p className="text-center">No checked-out orders found.</p>
+          ) : (
+            orderList.map((order) =>
+              order.items.map((item, index) => (
+                <Card key={index} className="mb-3">
+                  <Card.Body>
+                    <Card.Title>{item.productName}</Card.Title>
+                    <Card.Text>
+                      <strong>Quantity:</strong> {item.quantity} <br />
+                      <strong>Description:</strong> {item.description} <br />
+                      <strong>Amount:</strong> KSh {item.price * item.quantity}{" "}
+                      <br />
+                      <strong>Status:</strong> {order.status}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              ))
+            )
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => setShowCheckedOutOrders(false)}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
       </Modal>
     </div>
   );

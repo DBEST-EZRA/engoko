@@ -191,7 +191,6 @@ const AdminOrders = () => {
                         {order.items.map((item, index) => (
                           <li key={index}>
                             {item.productName} (x{item.quantity}) -{" "}
-                            {item.description}
                           </li>
                         ))}
                       </ul>

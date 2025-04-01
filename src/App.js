@@ -9,6 +9,7 @@ import Gallery from "./components/Gallery";
 import Products from "./components/Products";
 import Team from "./components/Team";
 import Blogs from "./components/Blogs";
+import AdminOrders from "./components/Admin";
 
 const Layout = ({ children }) => {
   return (
@@ -77,6 +78,14 @@ function App() {
           element={
             <Layout>
               <Gallery />
+            </Layout>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <Layout>
+              <AdminOrders />
             </Layout>
           }
         />

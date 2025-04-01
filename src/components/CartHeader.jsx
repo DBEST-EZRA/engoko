@@ -3,7 +3,6 @@ import {
   FaShoppingCart,
   FaUser,
   FaClipboardList,
-  FaGoogle,
   FaTrash,
 } from "react-icons/fa";
 import { auth, db, provider } from "./Database/Configuration";
@@ -15,8 +14,7 @@ import {
   collection,
   query,
   where,
-  getDocs,
-  updateDoc,
+  onSnapshot,
 } from "firebase/firestore";
 import { Button, Offcanvas, Card, Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -44,7 +42,6 @@ const CartHeader = () => {
           },
           { merge: true }
         );
-        fetchCartItems(user.email);
       } else {
         setUser(null);
         sessionStorage.removeItem("user");
@@ -56,20 +53,28 @@ const CartHeader = () => {
     return () => unsubscribe();
   }, []);
 
-  // Fetch Cart Items from Firestore
-  const fetchCartItems = async (email) => {
-    const q = query(collection(db, "cart"), where("userEmail", "==", email));
-    const querySnapshot = await getDocs(q);
-    const items = [];
-    querySnapshot.forEach((doc) => {
-      items.push({ id: doc.id, ...doc.data(), quantity: 1 });
+  // Real-time Cart Updates
+  useEffect(() => {
+    if (!user) return;
+    const q = query(
+      collection(db, "cart"),
+      where("userEmail", "==", user.email)
+    );
+
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push({ id: doc.id, ...doc.data(), quantity: 1 });
+      });
+      setCartItems(items);
+      setCartCount(items.length);
     });
-    setCartItems(items);
-    setCartCount(items.length);
-  };
+
+    return () => unsubscribe();
+  }, [user]);
 
   // Increase Quantity
-  const increaseQuantity = async (id) => {
+  const increaseQuantity = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -78,7 +83,7 @@ const CartHeader = () => {
   };
 
   // Decrease Quantity
-  const decreaseQuantity = async (id) => {
+  const decreaseQuantity = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
         item.id === id && item.quantity > 1
@@ -91,8 +96,6 @@ const CartHeader = () => {
   // Remove Item from Cart
   const removeItem = async (id) => {
     await deleteDoc(doc(db, "cart", id));
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
-    setCartCount((prev) => prev - 1);
   };
 
   // Calculate Grand Total
@@ -119,16 +122,20 @@ const CartHeader = () => {
 
   return (
     <div className="cart-header d-flex justify-content-end align-items-center gap-3 p-2">
-      {/* Login Icon */}
+      {/* User Profile */}
       <div className="text-center">
         {user ? (
           <>
-            <FaUser
-              className="icon small-icon"
-              title="Logout"
-              onClick={handleLogout}
+            <img
+              src={user.photoURL || "default-profile.png"}
+              alt="Profile"
+              className="user-profile-img"
+              title={user.displayName}
             />
             <div className="small-text">{user.displayName}</div>
+            <button className="logout-btn" onClick={handleLogout}>
+              Logout
+            </button>
           </>
         ) : (
           <>

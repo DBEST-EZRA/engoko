@@ -9,6 +9,7 @@ import { auth, db, provider } from "./Database/Configuration";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import {
   doc,
+  addDoc,
   setDoc,
   deleteDoc,
   collection,
@@ -16,7 +17,7 @@ import {
   where,
   onSnapshot,
 } from "firebase/firestore";
-import { Button, Offcanvas, Card, Badge } from "react-bootstrap";
+import { Button, Offcanvas, Card, Badge, Modal, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CartHeader.css";
 
@@ -72,6 +73,58 @@ const CartHeader = () => {
 
     return () => unsubscribe();
   }, [user]);
+
+  ///////////////////////
+  ///////////////////////
+  ///////////////////////
+  const [showCheckout, setShowCheckout] = useState(false);
+
+  const [checkoutDetails, setCheckoutDetails] = useState({
+    fullName: "",
+    email: user ? user.email : "",
+    phone: "",
+    address: "",
+  });
+
+  const handleChange = (e) => {
+    setCheckoutDetails({ ...checkoutDetails, [e.target.name]: e.target.value });
+  };
+
+  // Handle Checkout
+  const handleCheckout = async (e) => {
+    e.preventDefault();
+    if (!cartItems.length) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const orderData = {
+        userId: user ? user.uid : null,
+        userEmail: checkoutDetails.email,
+        customerDetails: checkoutDetails,
+        items: cartItems,
+        totalAmount: grandTotal,
+        status: "Pending",
+        createdAt: new Date(),
+      };
+
+      await addDoc(collection(db, "orders"), orderData);
+      alert("Order placed successfully!");
+      setShowCheckout(false);
+    } catch (error) {
+      console.error("Error placing order:", error);
+      alert("Failed to place order. Please try again.");
+    }
+
+    setLoading(false);
+  };
+
+  ///////////////////////
+  ///////////////////////
+  ///////////////////////
 
   // Increase Quantity
   const increaseQuantity = (id) => {
@@ -239,8 +292,9 @@ const CartHeader = () => {
             <div className="text-center mt-4">
               <h5>Grand Total: KSh {grandTotal.toLocaleString()}</h5>
               <Button
-                style={{ backgroundColor: "#800020", borderColor: "#800020" }}
                 className="w-100 mt-2"
+                style={{ backgroundColor: "#800020", borderColor: "#800020" }}
+                onClick={() => setShowCheckout(true)}
               >
                 Checkout
               </Button>
@@ -248,6 +302,61 @@ const CartHeader = () => {
           )}
         </Offcanvas.Body>
       </Offcanvas>
+
+      {/* Checkout Modal */}
+      <Modal show={showCheckout} onHide={() => setShowCheckout(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Checkout</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleCheckout}>
+            <Form.Group className="mb-3">
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="fullName"
+                required
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                required
+                value={checkoutDetails.email}
+                onChange={handleChange}
+                disabled={user}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Phone</Form.Label>
+              <Form.Control
+                type="text"
+                name="phone"
+                required
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Address</Form.Label>
+              <Form.Control
+                type="text"
+                name="address"
+                required
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <h5 className="text-center mt-3">
+              Grand Total: KSh {grandTotal.toLocaleString()}
+            </h5>
+            <Button type="submit" className="w-100 mt-3" disabled={loading}>
+              {loading ? "Processing..." : "Confirm Order"}
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

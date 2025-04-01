@@ -26,7 +26,6 @@ const CartHeader = () => {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
-  const [orderCount, setOrderCount] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showCheckedOutOrders, setShowCheckedOutOrders] = useState(false);

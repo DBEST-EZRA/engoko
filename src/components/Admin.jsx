@@ -8,7 +8,6 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { Button, Table, Modal, Form } from "react-bootstrap";
-import { FaLock } from "react-icons/fa"; // For icon in modal
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);

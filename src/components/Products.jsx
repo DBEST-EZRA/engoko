@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
-import { auth, db } from "./Database/Configuration";
+import { db } from "./Database/Configuration";
 import { doc, setDoc } from "firebase/firestore";
 import CartHeader from "./CartHeader";
 import one from "./image/a1.webp";

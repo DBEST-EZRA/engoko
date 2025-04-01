@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { db } from "./Database/Configuration";
 import { doc, setDoc } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth"; // Import Firebase Authentication
 import CartHeader from "./CartHeader";
 import one from "./image/a1.webp";
 import two from "./image/a2.webp";
@@ -86,10 +87,19 @@ const Products = () => {
   const [loadingItems, setLoadingItems] = useState(new Set()); // Track loading state
 
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
+    const auth = getAuth();
+
+    // Set up real-time user state observer
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser); // User is logged in
+      } else {
+        setUser(null); // User is logged out
+      }
+    });
+
+    // Clean up the listener when the component unmounts
+    return () => unsubscribe();
   }, []);
 
   const handleAddToCart = async (product) => {

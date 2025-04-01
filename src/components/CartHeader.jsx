@@ -85,7 +85,7 @@ const CartHeader = () => {
 
   const [checkoutDetails, setCheckoutDetails] = useState({
     fullName: "",
-    email: user ? user.email : "",
+    email: user?.email?.trim() || "",
     phone: "",
     address: "",
   });
@@ -107,7 +107,7 @@ const CartHeader = () => {
     try {
       const orderData = {
         userId: user ? user.uid : null,
-        userEmail: checkoutDetails.email,
+        userEmail: user?.email?.trim() || "",
         customerDetails: checkoutDetails,
         items: cartItems,
         totalAmount: grandTotal,
@@ -371,6 +371,7 @@ const CartHeader = () => {
               <Form.Control
                 type="email"
                 name="email"
+                placeholder="Do not fill(auto fills)"
                 required
                 value={checkoutDetails.email}
                 onChange={handleChange}
@@ -392,13 +393,23 @@ const CartHeader = () => {
                 type="text"
                 name="address"
                 required
+                placeholder="E.g Kisii Town next to Central Police"
                 onChange={handleChange}
               />
             </Form.Group>
             <h5 className="text-center mt-3">
               Grand Total: KSh {grandTotal.toLocaleString()}
             </h5>
-            <Button type="submit" className="w-100 mt-3" disabled={loading}>
+            <Button
+              type="submit"
+              className="w-100 mt-3"
+              disabled={loading}
+              style={{
+                backgroundColor: "#800020",
+                borderColor: "#800020",
+                color: "white",
+              }}
+            >
               {loading ? "Processing..." : "Confirm Order"}
             </Button>
           </Form>
@@ -412,7 +423,7 @@ const CartHeader = () => {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>My Checked-Out Orders</Modal.Title>
+          <Modal.Title>My Orders</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {orderList.length === 0 ? (
@@ -438,7 +449,11 @@ const CartHeader = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button
-            variant="secondary"
+            style={{
+              backgroundColor: "#800020",
+              borderColor: "#800020",
+              color: "white",
+            }}
             onClick={() => setShowCheckedOutOrders(false)}
           >
             Close

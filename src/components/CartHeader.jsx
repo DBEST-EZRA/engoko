@@ -139,30 +139,34 @@ const CartHeader = () => {
           </>
         ) : (
           <>
-            <FaUser
-              className="icon small-icon"
-              title="Login"
+            <FaUser className="icon small-icon" title="Login" />
+            <div
+              className="small-text link-text"
               onClick={handleGoogleSignIn}
-            />
-            <div className="small-text">Login</div>
+              style={{ cursor: "pointer", color: "blue" }}
+            >
+              Login
+            </div>
           </>
         )}
       </div>
 
       {/* Cart Icon */}
       <div className="text-center position-relative">
-        <FaShoppingCart
-          className="icon small-icon"
-          title="Cart"
-          onClick={() => setShowCart(true)}
-        />
+        <FaShoppingCart className="icon small-icon" title="Cart" />
         <Badge
           bg="danger"
           className="position-absolute top-0 start-100 translate-middle"
         >
           {cartCount}
         </Badge>
-        <div className="small-text">Cart</div>
+        <div
+          className="small-text link-text"
+          onClick={() => setShowCart(true)}
+          style={{ cursor: "pointer", color: "blue" }}
+        >
+          Cart
+        </div>
       </div>
 
       {/* Orders Icon */}

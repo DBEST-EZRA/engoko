@@ -24,9 +24,27 @@ const HeroSection = () => {
           <Container data-aos="fade-up">
             <h1 className="display-4 fw-bold">Welcome to ENGOKO</h1>
             <p className="lead">
-              Fresh, quality chicken delivered straight to your door.
+              Engoko Ltd is a leading Kenyan supplier of high-quality,
+              dual-purpose day-old chicks. We are committed to transforming the
+              poultry industry in Kenya by providing smallholder farmers with
+              hardy, disease-resistant birds. Our chicks thrive in local rural
+              environments, offering a more productive alternative to
+              traditional breeds.
             </p>
-            <Button className="hero-btn" href="/shop">
+            <Button
+              style={{
+                backgroundColor: "#890010",
+                color: "#fff",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+              className="hero-btn"
+              href="/shop"
+            >
               Shop Now
             </Button>
           </Container>
@@ -43,9 +61,26 @@ const HeroSection = () => {
           <Container data-aos="fade-up">
             <h1 className="display-4 fw-bold">Your Trusted Poultry Partner</h1>
             <p className="lead">
-              High-quality poultry products straight from our farm to your home.
+              At Engoko Ltd, we believe in empowering smallholder farmers with
+              birds that provide both meat and egg benefits. Our dual-purpose
+              chicks are not only more productive but can also play a vital role
+              in addressing poverty and malnutrition across the country,
+              ensuring a brighter and healthier future for Kenyan communities.
             </p>
-            <Button className="hero-btn" href="/shop">
+            <Button
+              style={{
+                backgroundColor: "#890010",
+                color: "#fff",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+              className="hero-btn"
+              href="/shop"
+            >
               Shop Now
             </Button>
           </Container>

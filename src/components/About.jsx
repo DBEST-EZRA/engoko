@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import one from "./image/1.jpeg";
 import two from "./image/2.jpeg";
 import three from "./image/3.jpeg";
+import OurValues from "./OurValues";
 
 const About = () => {
   useEffect(() => {
@@ -120,6 +121,7 @@ const About = () => {
             />
           </Col>
         </Row>
+        <OurValues />
       </Container>
     </section>
   );

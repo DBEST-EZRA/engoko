@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import { FaEgg, FaSeedling, FaChalkboardTeacher } from "react-icons/fa"; // Import FA icons
+import { FaTools, FaBullhorn } from "react-icons/fa";
+import { GiChicken } from "react-icons/gi";
 import "./Services.css";
 
 const Services = () => {
@@ -26,7 +27,7 @@ const Services = () => {
           <Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="200">
             <Card className="h-100 border-0 shadow text-center p-4">
               <div className="icon-container mx-auto">
-                <FaEgg className="service-icon" />
+                <GiChicken className="service-icon" />
               </div>
               <Card.Body>
                 <Card.Title>Poultry Breeding</Card.Title>
@@ -44,7 +45,7 @@ const Services = () => {
           <Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="400">
             <Card className="h-100 border-0 shadow text-center p-4">
               <div className="icon-container mx-auto">
-                <FaSeedling className="service-icon" />
+                <FaTools className="service-icon" />
               </div>
               <Card.Body>
                 <Card.Title>Technical Support</Card.Title>
@@ -62,7 +63,7 @@ const Services = () => {
           <Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="600">
             <Card className="h-100 border-0 shadow text-center p-4">
               <div className="icon-container mx-auto">
-                <FaChalkboardTeacher className="service-icon" />
+                <FaBullhorn className="service-icon" />
               </div>
               <Card.Body>
                 <Card.Title>Marketing</Card.Title>

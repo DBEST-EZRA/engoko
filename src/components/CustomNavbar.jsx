@@ -1,7 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaTiktok,
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 const messages = ["Payment on Delivery", "Secure and Reliable"];
@@ -29,6 +34,15 @@ const CustomNavbar = () => {
         }}
       >
         <div style={{ display: "flex", gap: "15px" }}>
+          <a
+            href="https://www.tiktok.com/@yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#fff" }}
+          >
+            <FaTiktok size={20} />
+          </a>
+
           <a
             href="https://www.instagram.com"
             target="_blank"

@@ -87,7 +87,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="text-center small mt-4 border-top border-white pt-3">
-        &copy; {new Date().getFullYear()} Beta Softwares. All rights reserved.
+        &copy; {new Date().getFullYear()} Engoko Ltd. All rights reserved.
       </div>
     </footer>
   );

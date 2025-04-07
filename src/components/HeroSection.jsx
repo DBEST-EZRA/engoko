@@ -7,22 +7,31 @@ import "aos/dist/aos.css";
 import cover1 from "./image/covernew.png";
 import cover2 from "./cover2.png";
 
+// Typewriter effect CSS
+import "./typewriter.css";
+
 const HeroSection = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <Carousel controls={false} indicators={true} interval={4000} pause={false}>
+    <Carousel
+      controls={false}
+      indicators={true}
+      interval={4000}
+      pause={false}
+      slide="true"
+    >
       {/* Slide 1 */}
       <Carousel.Item>
         <div
-          className="hero-section d-flex align-items-center text-center text-white"
+          className="hero-section d-flex align-items-center text-left text-white"
           style={{ backgroundImage: `url(${cover1})` }}
         >
           <div className="overlay"></div>
           <Container data-aos="fade-up">
-            <h1 className="display-4 fw-bold">Welcome to ENGOKO</h1>
+            <h1 className="display-4 fw-bold typewriter">Welcome to ENGOKO</h1>
             <p className="lead">
               Engoko Ltd is a leading Kenyan supplier of high-quality,
               dual-purpose day-old chicks. We are committed to transforming the
@@ -54,12 +63,14 @@ const HeroSection = () => {
       {/* Slide 2 */}
       <Carousel.Item>
         <div
-          className="hero-section d-flex align-items-center text-center text-white"
+          className="hero-section d-flex align-items-center text-left text-white"
           style={{ backgroundImage: `url(${cover2})` }}
         >
           <div className="overlay"></div>
           <Container data-aos="fade-up">
-            <h1 className="display-4 fw-bold">Your Trusted Poultry Partner</h1>
+            <h1 className="display-4 fw-bold typewriter">
+              Your Trusted Poultry Partner
+            </h1>
             <p className="lead">
               At Engoko Ltd, we believe in empowering smallholder farmers with
               birds that provide both meat and egg benefits. Our dual-purpose

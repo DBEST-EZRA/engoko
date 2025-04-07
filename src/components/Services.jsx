@@ -29,10 +29,12 @@ const Services = () => {
                 <FaEgg className="service-icon" />
               </div>
               <Card.Body>
-                <Card.Title>Day-Old Chicks</Card.Title>
+                <Card.Title>Poultry Breeding</Card.Title>
                 <Card.Text>
-                  We supply high-quality, dual-purpose day-old chicks that are
-                  disease-resistant and ideal for smallholder farmers.
+                  Engoko Ltd is the exclusive distributor of the Rainbow
+                  Roosters, Kuroiler & SASSO, high-quality, dual-purpose poultry
+                  breeds that are up to four times more productive than
+                  traditional local breeds.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -45,10 +47,12 @@ const Services = () => {
                 <FaSeedling className="service-icon" />
               </div>
               <Card.Body>
-                <Card.Title>Poultry Feed</Card.Title>
+                <Card.Title>Technical Support</Card.Title>
                 <Card.Text>
-                  Our nutritious poultry feed ensures the healthy growth and
-                  productivity of your birds, maximizing their potential.
+                  We offer technical consultations and training by animal
+                  production and veterinary professionals throughout the
+                  brooding process, with direct delivery to the farmer's
+                  premises.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -61,10 +65,12 @@ const Services = () => {
                 <FaChalkboardTeacher className="service-icon" />
               </div>
               <Card.Body>
-                <Card.Title>Farmer Training</Card.Title>
+                <Card.Title>Marketing</Card.Title>
                 <Card.Text>
-                  We offer training programs to educate farmers on best poultry
-                  management practices for better productivity.
+                  Continuous support to local farmers in growing their
+                  businesses by helping them find markets for brooded Rainbow
+                  Roosters, Kuroiler & SASSO birds and exploring opportunities
+                  for further diversification.
                 </Card.Text>
               </Card.Body>
             </Card>

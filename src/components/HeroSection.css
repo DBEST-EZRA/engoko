@@ -1,5 +1,5 @@
 .hero-section {
-  height: 90vh;
+  height: 100vh;
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
@@ -48,12 +48,12 @@
 .lead {
   font-size: 1.1rem;
   max-width: 70%;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 h1 {
   font-size: 3rem;
-  max-width: 70%;
+  /* max-width: 70%; */
   margin-left: 20px;
   line-height: 1.2;
 }

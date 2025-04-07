@@ -6,7 +6,7 @@
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
-  animation: typing 4s steps(40) 1s 1 normal both,
+  animation: typing 4s steps(10) 1s 1 normal both,
     blinkCaret 0.75s step-end infinite;
 }
 
@@ -22,5 +22,8 @@
 @keyframes blinkCaret {
   50% {
     border-color: transparent;
+  }
+  100% {
+    border-color: #890010; /* Caret color */
   }
 }

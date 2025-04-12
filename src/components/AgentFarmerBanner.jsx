@@ -139,9 +139,10 @@ const AgentFarmerBanner = () => {
 
         <Button
           variant="light"
-          className="mt-4 fw-bold"
+          className="mt-4 fw-bold border-0"
           data-aos="zoom-in"
           onClick={handleShow}
+          style={{ backgroundColor: "#FFA500", color: "#fff" }}
         >
           Write to Us
         </Button>

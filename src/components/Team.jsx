@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import one from "./image/t1.png";
+import one from "./image/sam.webp";
 import two from "./image/t3.jpg";
 import three from "./image/t2.jpg";
 import four from "./image/t4.jpeg";

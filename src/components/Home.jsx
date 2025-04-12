@@ -7,6 +7,7 @@ import FAQs from "./FAQs";
 import WhatsAppButton from "./WhatsappButton";
 import IntroSection from "./SectionAbout";
 import ServiceSection from "./sectionServices";
+import SlidingPromo from "./SlidingPromo";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <ServiceSection />
       <AgentFarmerBanner />
       <Testimonials />
+      <SlidingPromo />
       <FAQs />
       <WhatsAppButton />
     </div>

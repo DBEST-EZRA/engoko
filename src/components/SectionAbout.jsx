@@ -7,11 +7,7 @@ const IntroSection = () => {
     <section className="container py-5">
       <div className="row align-items-center">
         {/* Image Section */}
-        <div
-          className="col-md-6 mb-4 mb-md-0"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-        >
+        <div className="col-md-6 mb-4 mb-md-0">
           <img
             src={heroImage}
             alt="Intro"
@@ -21,17 +17,13 @@ const IntroSection = () => {
         </div>
 
         {/* Text Section */}
-        <div
-          className="col-md-6 d-flex flex-column align-items-end text-md-end pe-md-5"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-        >
+        <div className="col-md-6 d-flex flex-column align-items-end text-md-end pe-md-5">
           <div className="w-100" style={{ maxWidth: "500px" }}>
             <h1 className="display-5 fw-bold mb-4">
               Empowering Households Through Poultry
             </h1>
-            <p className="">
-              At Engoko Ltd We want to ensure each household has 5 chicken. We
+            <p>
+              At Engoko Ltd, we want to ensure each household has 5 chickens. We
               believe this small step can make a big difference in improving
               nutrition, increasing household income, and empowering communities
               to become more self-reliant. By supporting sustainable poultry

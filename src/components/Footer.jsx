@@ -3,91 +3,104 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Footer = () => {
   return (
     <footer
-      style={{ backgroundColor: "#890010" }}
-      className="text-white py-5 px-3"
+      style={{ backgroundColor: "#890010", fontFamily: "Segoe UI, sans-serif" }}
+      className="text-white pt-5 pb-3 px-3"
     >
       <div className="container">
-        <div className="row">
+        <div className="row gy-4">
           {/* Logo and Description */}
           <div className="col-md-3">
-            <h2 className="fw-bold">Engoko</h2>
-            <p className="mt-2 small">
-              Your trusted Chicken supply store. We offer premium products, you
-              cant regret trading with us.
+            <h3 className="fw-bold text-white">Engoko</h3>
+            <p className="small mb-0 text-white-50">
+              Your trusted chicken supply store. Premium products you can rely
+              on.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="col-md-3">
-            <h5 className="fw-semibold">Quick Links</h5>
+            <h6 className="fw-semibold mb-3" style={{ color: "#FFA500" }}>
+              Quick Links
+            </h6>
             <ul className="list-unstyled small">
-              <li>
-                <a href="/shop" className="text-white text-decoration-none">
-                  Shop
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-white text-decoration-none">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-white text-decoration-none">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/faq" className="text-white text-decoration-none">
-                  FAQ
-                </a>
-              </li>
+              {["Shop", "About Us", "Contact", "FAQ"].map((item, i) => (
+                <li key={i}>
+                  <a
+                    href={`/${item.toLowerCase().replace(/\s/g, "")}`}
+                    className="text-white text-decoration-none d-block py-1"
+                    style={{ transition: "color 0.3s" }}
+                    onMouseOver={(e) => (e.target.style.color = "#FFA500")}
+                    onMouseOut={(e) => (e.target.style.color = "white")}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Customer Service */}
           <div className="col-md-3">
-            <h5 className="fw-semibold">Customer Service</h5>
+            <h6 className="fw-semibold mb-3" style={{ color: "#FFA500" }}>
+              Customer Service
+            </h6>
             <ul className="list-unstyled small">
-              <li>
-                <a href="/shipping" className="text-white text-decoration-none">
-                  Shipping & Returns
-                </a>
-              </li>
-              <li>
-                <a href="/privacy" className="text-white text-decoration-none">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms" className="text-white text-decoration-none">
-                  Terms & Conditions
-                </a>
-              </li>
+              {[
+                { label: "Shipping & Returns", link: "/shipping" },
+                { label: "Privacy Policy", link: "/privacy" },
+                { label: "Terms & Conditions", link: "/terms" },
+              ].map(({ label, link }, i) => (
+                <li key={i}>
+                  <a
+                    href={link}
+                    className="text-white text-decoration-none d-block py-1"
+                    style={{ transition: "color 0.3s" }}
+                    onMouseOver={(e) => (e.target.style.color = "#FFA500")}
+                    onMouseOut={(e) => (e.target.style.color = "white")}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter Subscription */}
+          {/* Newsletter */}
           <div className="col-md-3">
-            <h5 className="fw-semibold">Subscribe</h5>
-            <p className="small">Get the latest updates and offers.</p>
+            <h6 className="fw-semibold mb-3" style={{ color: "#FFA500" }}>
+              Subscribe
+            </h6>
+            <p className="small mb-2 text-white-50">
+              Get the latest updates and offers.
+            </p>
             <div className="input-group">
               <input
                 type="email"
-                className="form-control"
+                className="form-control form-control-sm border-0"
                 placeholder="Your email"
-                aria-label="Your email"
+                style={{ fontSize: "0.875rem" }}
               />
-              <button className="btn btn-light text-danger fw-bold">
+              <button
+                className="btn btn-sm fw-bold"
+                style={{
+                  backgroundColor: "#FFA500",
+                  color: "#000",
+                  border: "none",
+                }}
+              >
                 Subscribe
               </button>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="text-center small mt-4 border-top border-white pt-3">
-        &copy; {new Date().getFullYear()} Engoko Ltd. All rights reserved.
+        {/* Bottom Bar */}
+        <div
+          className="text-center small mt-4 pt-3 border-top"
+          style={{ borderColor: "#FFA500", color: "#FFA500" }}
+        >
+          &copy; {new Date().getFullYear()} Engoko Ltd. All rights reserved.
+        </div>
       </div>
     </footer>
   );

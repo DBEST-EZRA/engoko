@@ -5,12 +5,16 @@ import Testimonials from "./Testimonial";
 import AgentFarmerBanner from "./AgentFarmerBanner";
 import FAQs from "./FAQs";
 import WhatsAppButton from "./WhatsappButton";
+import IntroSection from "./SectionAbout";
+import ServiceSection from "./sectionServices";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
+      <IntroSection />
       <Services />
+      <ServiceSection />
       <AgentFarmerBanner />
       <Testimonials />
       <FAQs />

@@ -41,22 +41,30 @@ const HeroSection = () => {
                 rural environments, offering a more productive alternative to
                 traditional breeds.
               </p>
-              <Button
-                style={{
-                  backgroundColor: "#890010",
-                  color: "#fff",
-                  border: "none",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                  transition: "all 0.3s ease",
-                }}
-                className="hero-btn"
-                href="/shop"
-              >
-                Shop Now
-              </Button>
+              <div className="d-flex flex-wrap gap-3 mt-3 align-items-center">
+                <Button
+                  style={{
+                    backgroundColor: "#890010",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "45px",
+                    lineHeight: "1",
+                    fontSize: "1rem",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Shop Now
+                </Button>
+              </div>
             </Container>
           </div>
         </Carousel.Item>
@@ -77,22 +85,24 @@ const HeroSection = () => {
                 role in addressing poverty and malnutrition across the country,
                 ensuring a brighter and healthier future for Kenyan communities.
               </p>
-              <Button
-                style={{
-                  backgroundColor: "#890010",
-                  color: "#fff",
-                  border: "none",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  fontWeight: "bold",
-                  textDecoration: "none",
-                  transition: "all 0.3s ease",
-                }}
-                className="hero-btn"
-                href="/shop"
-              >
-                Shop Now
-              </Button>
+              <div className="d-flex flex-wrap gap-3 mt-3">
+                <Button
+                  style={{
+                    backgroundColor: "#890010",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Shop Now
+                </Button>
+              </div>
             </Container>
           </div>
         </Carousel.Item>

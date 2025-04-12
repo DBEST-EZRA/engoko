@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "./image/intropic.webp";
+import heroImage from "./image/lower.webp";
 import { Link } from "react-router-dom"; // Needed if you're using React Router
 
 const ServiceSection = () => {

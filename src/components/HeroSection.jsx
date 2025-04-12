@@ -7,9 +7,6 @@ import "aos/dist/aos.css";
 import cover1 from "./image/covernew.png";
 import cover2 from "./cover2.png";
 
-// Typewriter effect CSS
-import "./typewriter.css";
-
 const HeroSection = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -32,19 +29,15 @@ const HeroSection = () => {
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">
-              <h1 className="display-4 fw-bold typewriter">Karibu Engoko</h1>
-              <p className="lead">
-                Engoko Ltd is a leading Kenyan supplier of high-quality,
-                dual-purpose day-old chicks. We are committed to transforming
-                the poultry industry in Kenya by providing smallholder farmers
-                with hardy, disease-resistant birds. Our chicks thrive in local
-                rural environments, offering a more productive alternative to
-                traditional breeds.
-              </p>
+              <h2 className="display-4 fw-light">
+                Empowering Farmers for a <br />
+                Healthier, Wealthier Future
+              </h2>
+
               <div className="d-flex flex-wrap gap-3 mt-3 align-items-center">
                 <Button
                   style={{
-                    backgroundColor: "#890010",
+                    backgroundColor: "#FFA500",
                     color: "#fff",
                     border: "none",
                     padding: "10px 20px",
@@ -77,18 +70,14 @@ const HeroSection = () => {
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">
-              <h1 className="display-4 fw-bold typewriter">You're Valued</h1>
-              <p className="lead">
-                At Engoko Ltd, we believe in empowering smallholder farmers with
-                birds that provide both meat and egg benefits. Our dual-purpose
-                chicks are not only more productive but can also play a vital
-                role in addressing poverty and malnutrition across the country,
-                ensuring a brighter and healthier future for Kenyan communities.
-              </p>
+              <h2 className="display-4 fw-light">
+                The chicks we Breed <br /> to the Birds you rear
+              </h2>
+              <p className=""></p>
               <div className="d-flex flex-wrap gap-3 mt-3">
                 <Button
                   style={{
-                    backgroundColor: "#890010",
+                    backgroundColor: "#FFA500",
                     color: "#fff",
                     border: "none",
                     padding: "10px 20px",

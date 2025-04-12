@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from "./image/intropic.webp";
+import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
@@ -37,6 +38,20 @@ const IntroSection = () => {
               farming, we aim to build a future where every family has access to
               quality food, economic opportunity, and a better quality of life.
             </p>
+            <Link
+              to="/about"
+              className="btn"
+              style={{
+                backgroundColor: "#FFA500",
+                color: "#fff",
+                fontWeight: "bold",
+                borderRadius: "8px",
+                padding: "10px 20px",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              }}
+            >
+              Learn More
+            </Link>
           </div>
         </div>
       </div>

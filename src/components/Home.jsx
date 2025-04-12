@@ -8,6 +8,7 @@ import WhatsAppButton from "./WhatsappButton";
 import IntroSection from "./SectionAbout";
 import ServiceSection from "./sectionServices";
 import SlidingPromo from "./SlidingPromo";
+import "./home.css";
 
 const Home = () => {
   return (

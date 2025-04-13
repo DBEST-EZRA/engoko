@@ -7,7 +7,7 @@ import Contact from "./Contact";
 import WhatsAppButton from "./WhatsappButton";
 import IntroSection from "./SectionAbout";
 import ServiceSection from "./sectionServices";
-import SlidingPromo from "./SlidingPromo";
+// import SlidingPromo from "./SlidingPromo";
 import "./home.css";
 import OurPartners from "./OurPartners";
 import ImageBanner from "./ImageBanner";
@@ -22,7 +22,7 @@ const Home = () => {
       <ServiceSection />
       <ImageBanner />
       <Testimonials />
-      <SlidingPromo />
+      {/* <SlidingPromo /> */}
       <AgentFarmerBanner />
       <Contact />
       {/* <FAQs /> */}

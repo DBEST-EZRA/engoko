@@ -1,21 +1,35 @@
 import React from "react";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+} from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-details">
-        <h2>Contact Us</h2>
+        <h2 style={{ color: "#890010" }}>Contact Us</h2>
+
         <p>
+          <FaMapMarkerAlt style={{ color: "#FFA500", marginRight: "8px" }} />
           <strong>Location:</strong> Mashauri, Kisii Town, Kenya
         </p>
+
         <p>
+          <FaPhoneAlt style={{ color: "#FFA500", marginRight: "8px" }} />
           <strong>Phone:</strong> +254 710 831 806
         </p>
+
         <p>
-          <strong>Email:</strong> info@engoko.com
+          <FaEnvelope style={{ color: "#FFA500", marginRight: "8px" }} />
+          <strong>Email:</strong> sales@engoko.com
         </p>
+
         <p>
+          <FaClock style={{ color: "#FFA500", marginRight: "8px" }} />
           <strong>Business Hours:</strong> Monday - Saturday: 7:00 AM - 6:00 PM
         </p>
       </div>

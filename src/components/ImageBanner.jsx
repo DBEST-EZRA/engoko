@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import banner from "./image/banner.webp";
+import banner from "./image/banner2.jpg";
 
 const ImageBanner = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const ImageBanner = () => {
     <div
       style={{
         position: "relative",
-        marginBottom: "25px",
+        // marginBottom: "25px",
         cursor: "pointer",
         // borderRadius: "20px",
         overflow: "hidden",
@@ -21,8 +21,8 @@ const ImageBanner = () => {
         src={banner}
         alt="About Engoko"
         style={{
-          width: "auto",
-          height: "176PX",
+          width: "100%",
+          height: "300px",
           display: "block",
           overflowX: "hidden",
         }}

@@ -6,9 +6,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import coverPremier from "./image/chickw.webp";
 import cover1 from "./image/covernew.png";
-import cover2 from "./image/cover2.webp";
+import broiler from "./image/broiler.webp";
+import layer from "./image/layer.webp";
 import cover3 from "./image/mommychic.webp";
 import cover4 from "./image/banana.webp";
+import eggs from "./image/eggs.webp";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -99,7 +101,7 @@ const HeroSection = () => {
                   className="hero-btn"
                   href="/shop"
                 >
-                  Shop Now
+                  Buy Now
                 </Button>
               </div>
             </Container>
@@ -110,13 +112,11 @@ const HeroSection = () => {
         <Carousel.Item>
           <div
             className="hero-section d-flex align-items-center text-left text-white"
-            style={{ backgroundImage: `url(${cover2})` }}
+            style={{ backgroundImage: `url(${eggs})` }}
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">
-              <h2 className="display-4 fw-light">
-                The chicks we Breed <br /> to the Birds you rear
-              </h2>
+              <h2 className="display-4 fw-light">Table Eggs</h2>
               <p className=""></p>
               <div className="d-flex flex-wrap gap-3 mt-3">
                 <Button
@@ -148,10 +148,7 @@ const HeroSection = () => {
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">
-              <h2 className="display-5 fw-light">
-                Bringing a Lasting Smile <br /> to Every Farmer by Making
-                Poultry Farming Transformational
-              </h2>
+              <h2 className="display-5 fw-light">2.5 Feed Conversion Ratio</h2>
               <p className=""></p>
               <div className="d-flex flex-wrap gap-3 mt-3">
                 <Button
@@ -184,6 +181,70 @@ const HeroSection = () => {
             <div className="overlay"></div>
             <Container data-aos="fade-up">
               <h2 className="display-5 fw-light">Free Range Bird</h2>
+              <p className=""></p>
+              <div className="d-flex flex-wrap gap-3 mt-3">
+                <Button
+                  style={{
+                    backgroundColor: "#FFA500",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Buy Now
+                </Button>
+              </div>
+            </Container>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 5 */}
+        <Carousel.Item>
+          <div
+            className="hero-section d-flex align-items-center text-left text-white"
+            style={{ backgroundImage: `url(${broiler})` }}
+          >
+            <div className="overlay"></div>
+            <Container data-aos="fade-up">
+              <h2 className="display-5 fw-light">Broilers</h2>
+              <p className=""></p>
+              <div className="d-flex flex-wrap gap-3 mt-3">
+                <Button
+                  style={{
+                    backgroundColor: "#FFA500",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Buy Now
+                </Button>
+              </div>
+            </Container>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 6 */}
+        <Carousel.Item>
+          <div
+            className="hero-section d-flex align-items-center text-left text-white"
+            style={{ backgroundImage: `url(${layer})` }}
+          >
+            <div className="overlay"></div>
+            <Container data-aos="fade-up">
+              <h2 className="display-5 fw-light">Layers</h2>
               <p className=""></p>
               <div className="d-flex flex-wrap gap-3 mt-3">
                 <Button

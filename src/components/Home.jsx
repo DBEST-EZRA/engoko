@@ -10,6 +10,7 @@ import ServiceSection from "./sectionServices";
 import SlidingPromo from "./SlidingPromo";
 import "./home.css";
 import OurPartners from "./OurPartners";
+import ImageBanner from "./ImageBanner";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <OurPartners />
       <Services />
       <ServiceSection />
+      <ImageBanner />
       <AgentFarmerBanner />
       <Testimonials />
       <SlidingPromo />

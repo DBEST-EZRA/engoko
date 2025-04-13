@@ -27,8 +27,7 @@ const ServiceSection = () => {
               <FaUserMd style={{ color: "#FFA500" }} /> Technical Assistance
             </h4>
             <p>
-              We provide various on-site technical assistance (area sales
-              managers and district sales representatives) through our
+              We provide various on-site technical assistance through our
               veterinary-trained professionals to our customers.
             </p>
 

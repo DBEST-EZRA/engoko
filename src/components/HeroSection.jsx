@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Button, Carousel } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import coverPremier from "./image/chickw.webp";
 import cover1 from "./image/covernew.png";
 import cover2 from "./image/cover2.webp";
 import cover3 from "./image/mommychic.webp";
@@ -23,6 +24,47 @@ const HeroSection = () => {
         pause={false}
         slide="true"
       >
+        {/* Slide premiere */}
+        <Carousel.Item>
+          <div
+            className="hero-section d-flex align-items-center text-left text-white"
+            style={{ backgroundImage: `url(${coverPremier})` }}
+          >
+            <div className="overlay"></div>
+            <Container data-aos="fade-up">
+              <h2 className="display-4 fw-light">
+                Pre-Vaccinated <br />
+                Day Old Chicks
+              </h2>
+
+              <div className="d-flex flex-wrap gap-3 mt-3 align-items-center">
+                <Button
+                  style={{
+                    backgroundColor: "#FFA500",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: "45px",
+                    lineHeight: "1",
+                    fontSize: "1rem",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Buy Now
+                </Button>
+              </div>
+            </Container>
+          </div>
+        </Carousel.Item>
+
         {/* Slide 1 */}
         <Carousel.Item>
           <div
@@ -32,7 +74,8 @@ const HeroSection = () => {
             <div className="overlay"></div>
             <Container data-aos="fade-up">
               <h2 className="display-4 fw-light">
-                Empowering Farmers for <br />a Healthier, Wealthier Future
+                Lays upto 240 Eggs <br />
+                per year
               </h2>
 
               <div className="d-flex flex-wrap gap-3 mt-3 align-items-center">
@@ -90,7 +133,7 @@ const HeroSection = () => {
                   className="hero-btn"
                   href="/shop"
                 >
-                  Shop Now
+                  Buy Now
                 </Button>
               </div>
             </Container>
@@ -125,7 +168,7 @@ const HeroSection = () => {
                   className="hero-btn"
                   href="/shop"
                 >
-                  Shop Now
+                  Buy Now
                 </Button>
               </div>
             </Container>
@@ -140,10 +183,7 @@ const HeroSection = () => {
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">
-              <h2 className="display-5 fw-light">
-                Bringing a Lasting Smile <br /> to Every Farmer by Making
-                Poultry Farming Transformational
-              </h2>
+              <h2 className="display-5 fw-light">Free Range Bird</h2>
               <p className=""></p>
               <div className="d-flex flex-wrap gap-3 mt-3">
                 <Button
@@ -160,7 +200,7 @@ const HeroSection = () => {
                   className="hero-btn"
                   href="/shop"
                 >
-                  Shop Now
+                  Buy Now
                 </Button>
               </div>
             </Container>

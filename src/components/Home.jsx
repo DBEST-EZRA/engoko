@@ -3,7 +3,7 @@ import HeroSection from "./HeroSection";
 import Services from "./Services";
 import Testimonials from "./Testimonial";
 import AgentFarmerBanner from "./AgentFarmerBanner";
-import FAQs from "./FAQs";
+import Contact from "./Contact";
 import WhatsAppButton from "./WhatsappButton";
 import IntroSection from "./SectionAbout";
 import ServiceSection from "./sectionServices";
@@ -21,10 +21,11 @@ const Home = () => {
       <Services />
       <ServiceSection />
       <ImageBanner />
-      <AgentFarmerBanner />
       <Testimonials />
       <SlidingPromo />
-      <FAQs />
+      <AgentFarmerBanner />
+      <Contact />
+      {/* <FAQs /> */}
       <WhatsAppButton />
     </div>
   );

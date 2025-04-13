@@ -19,17 +19,26 @@ const IntroSection = () => {
         {/* Text Section */}
         <div className="col-md-6 d-flex flex-column align-items-end text-md-end pe-md-5">
           <div className="w-100" style={{ maxWidth: "500px" }}>
-            <h1 className="display-5 fw-bold mb-4">
-              Empowering Households Through Poultry
-            </h1>
+            <h3 style={{ color: "#890010" }} className="display-5 fw-bold mb-4">
+              Mission
+            </h3>
             <p>
-              At Engoko Ltd, we want to ensure each household has 5 chickens. We
-              believe this small step can make a big difference in improving
-              nutrition, increasing household income, and empowering communities
-              to become more self-reliant. By supporting sustainable poultry
-              farming, we aim to build a future where every family has access to
-              quality food, economic opportunity, and a better quality of life.
+              Engoko is focused on serving millions of smallholder farmers in
+              rural communities by working with products that meet their unique
+              requirements. Engoko is the distributor of high quality
+              dual-purpose (improved Kienyeji) breeds:{" "}
+              <span style={{ fontWeight: "bold" }}>
+                "Sasso, Kuroilers, Rainbow Roosters" and Commercial Layers &
+                Broilers,{" "}
+              </span>{" "}
+              and in doing so we aim to improve nutrition, enhance farmer
+              livelihoods and create income opportunities for our agents and
+              partners.
             </p>
+            <h3 style={{ color: "#890010" }} className="display-5 fw-bold mb-4">
+              Vision
+            </h3>
+            <p>Our vision is to achieve one chicken per Household by 2027 </p>
             <Link
               to="/about"
               className="btn"

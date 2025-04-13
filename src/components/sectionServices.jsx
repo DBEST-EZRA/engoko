@@ -1,6 +1,6 @@
 import React from "react";
 import heroImage from "./image/lower.webp";
-import { Link } from "react-router-dom"; // Needed if you're using React Router
+import { Link } from "react-router-dom";
 
 const ServiceSection = () => {
   return (

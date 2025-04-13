@@ -5,8 +5,9 @@ import { Container, Button, Carousel } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import cover1 from "./image/covernew.png";
-import cover2 from "./cover2.png";
+import cover2 from "./image/cover2.webp";
 import cover3 from "./image/mommychic.webp";
+import cover4 from "./image/banana.webp";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -101,6 +102,41 @@ const HeroSection = () => {
           <div
             className="hero-section d-flex align-items-center text-left text-white"
             style={{ backgroundImage: `url(${cover3})` }}
+          >
+            <div className="overlay"></div>
+            <Container data-aos="fade-up">
+              <h2 className="display-5 fw-light">
+                Bringing a Lasting Smile <br /> to Every Farmer by Making
+                Poultry Farming Transformational
+              </h2>
+              <p className=""></p>
+              <div className="d-flex flex-wrap gap-3 mt-3">
+                <Button
+                  style={{
+                    backgroundColor: "#FFA500",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    fontWeight: "bold",
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  className="hero-btn"
+                  href="/shop"
+                >
+                  Shop Now
+                </Button>
+              </div>
+            </Container>
+          </div>
+        </Carousel.Item>
+
+        {/* Slide 4 */}
+        <Carousel.Item>
+          <div
+            className="hero-section d-flex align-items-center text-left text-white"
+            style={{ backgroundImage: `url(${cover4})` }}
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">

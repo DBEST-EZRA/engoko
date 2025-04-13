@@ -9,12 +9,14 @@ import IntroSection from "./SectionAbout";
 import ServiceSection from "./sectionServices";
 import SlidingPromo from "./SlidingPromo";
 import "./home.css";
+import OurPartners from "./OurPartners";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
       <IntroSection />
+      <OurPartners />
       <Services />
       <ServiceSection />
       <AgentFarmerBanner />

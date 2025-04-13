@@ -1,6 +1,7 @@
 import React from "react";
 import heroImage from "./image/lower.webp";
 import { Link } from "react-router-dom";
+import { FaCheckCircle, FaUserMd } from "react-icons/fa";
 
 const ServiceSection = () => {
   return (
@@ -13,40 +14,23 @@ const ServiceSection = () => {
           data-aos-duration="1000"
         >
           <div className="w-100" style={{ maxWidth: "500px" }}>
-            <h1 className="display-5 fw-bold mb-4">Our Poultry Breeds</h1>
+            <h1 className="display-5 fw-bold mb-4">Why Choose Us</h1>
+            <h4 className="d-flex align-items-center gap-2">
+              <FaCheckCircle style={{ color: "#FFA500" }} /> Best Quality
+            </h4>
             <p>
-              At Engoko Ltd, we offer a variety of high-quality chicken breeds
-              tailored for both meat and egg production. Whether you're a
-              smallholder or a commercial farmer, our birds are selected for
-              their resilience, productivity, and adaptability to local
-              conditions.
+              We place a strong emphasis on quality. We strive to provide
+              customers with the highest standard of poultry products and
+              services.
             </p>
-
-            {/* Fancy List with Custom Orange Bullets */}
-            <ul className="list-unstyled mt-3 mb-4">
-              {[
-                "Kuroiler",
-                "Rainbow Rooster",
-                "Sasso",
-                "Improved Kienyeji",
-                "Kenbro",
-              ].map((item, index) => (
-                <li key={index} className="d-flex align-items-start mb-2">
-                  <span
-                    style={{
-                      width: "8px",
-                      height: "8px",
-                      border: "2px solid #FFA500",
-                      borderRadius: "50%",
-                      marginTop: "6px",
-                      marginRight: "10px",
-                      flexShrink: 0,
-                    }}
-                  ></span>
-                  <strong>{item}</strong>
-                </li>
-              ))}
-            </ul>
+            <h4 className="d-flex align-items-center gap-2 mt-4">
+              <FaUserMd style={{ color: "#FFA500" }} /> Technical Assistance
+            </h4>
+            <p>
+              We provide various on-site technical assistance (area sales
+              managers and district sales representatives) through our
+              veterinary-trained professionals to our customers.
+            </p>
 
             {/* Shop Now Button */}
             <Link
@@ -61,7 +45,7 @@ const ServiceSection = () => {
                 boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
               }}
             >
-              Shop Now
+              Explore
             </Link>
           </div>
         </div>

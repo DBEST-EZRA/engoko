@@ -7,7 +7,7 @@ import two from "./image/ezra.webp";
 
 const teamMembers = [
   {
-    name: "Sam",
+    name: "Samuel Matieka",
     title: "Production Manager",
     image: one,
   },

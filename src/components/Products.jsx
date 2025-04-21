@@ -8,6 +8,7 @@ import oneday from "./image/oneday.jpeg";
 import onemonth from "./image/twoweeks.jpeg";
 import twomonth from "./image/onemonth.jpeg";
 import layers from "./image/newchicke.webp";
+import starterfeed from "./image/starterfeed.jpg";
 
 const chicks = [
   {
@@ -27,6 +28,12 @@ const chicks = [
     description: "Vaccinated and healthy, bred for excellent egg-laying.",
     price: "KSh 150",
     image: layers,
+  },
+  {
+    name: "Starter Feed 50KG",
+    description: "50KG Starter feed for chicks",
+    price: "KSh 4,100",
+    image: starterfeed,
   },
 ];
 

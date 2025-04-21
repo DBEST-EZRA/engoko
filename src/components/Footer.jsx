@@ -12,8 +12,7 @@ const Footer = () => {
           <div className="col-md-4">
             <h3 className="fw-bold text-white mb-2">Engoko</h3>
             <p className="text-white-50 small mb-0">
-              Your trusted chicken supply store. Premium products you can rely
-              on.
+              Empowering Small Holder Farmers
             </p>
           </div>
 

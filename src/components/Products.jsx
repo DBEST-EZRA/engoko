@@ -7,6 +7,7 @@ import CartHeader from "./CartHeader";
 import oneday from "./image/oneday.jpeg";
 import onemonth from "./image/twoweeks.jpeg";
 import twomonth from "./image/onemonth.jpeg";
+import layers from "./image/newchicke.webp";
 
 const chicks = [
   {
@@ -25,7 +26,7 @@ const chicks = [
     name: "Layers",
     description: "Vaccinated and healthy, bred for excellent egg-laying.",
     price: "KSh 150",
-    image: oneday,
+    image: layers,
   },
 ];
 

@@ -84,9 +84,9 @@ const Products = () => {
         </h2>
 
         {/* Chicks Section */}
-        <Row>
+        <Row className="g-3">
           {chicks.map((product, index) => (
-            <Col lg={4} md={6} sm={6} xs={12} key={index} className="mb-4">
+            <Col lg={4} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
                   variant="top"

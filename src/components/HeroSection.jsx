@@ -5,12 +5,13 @@ import { Container, Button, Carousel } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import coverPremier from "./image/chickw.webp";
-import cover1 from "./image/covernew.png";
+// import cover1 from "./image/covernew.png";
 import broiler from "./image/broiler.webp";
 import layer from "./image/layer.webp";
 import cover3 from "./image/mommychic.webp";
 import cover4 from "./image/banana.webp";
 import eggs from "./image/eggs.webp";
+import two from "./image/tester2.jpg";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -71,7 +72,7 @@ const HeroSection = () => {
         <Carousel.Item>
           <div
             className="hero-section d-flex align-items-center text-left text-white"
-            style={{ backgroundImage: `url(${cover1})` }}
+            style={{ backgroundImage: `url(${two})` }}
           >
             <div className="overlay"></div>
             <Container data-aos="fade-up">

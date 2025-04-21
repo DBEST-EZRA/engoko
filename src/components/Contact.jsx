@@ -15,7 +15,8 @@ const Contact = () => {
 
         <p>
           <FaMapMarkerAlt style={{ color: "#FFA500", marginRight: "8px" }} />
-          <strong>Location:</strong> Mashauri, Kisii Town, Kenya
+          <strong>Location:</strong> Mwamotubi Plaza Opp Kisii Main Stage -
+          Kisii
         </p>
 
         <p>
@@ -36,14 +37,14 @@ const Contact = () => {
 
       <div className="contact-map">
         <iframe
-          title="Mashauri, Kisii Town"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63834.81769883113!2d34.7488!3d-0.6812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18285f55a0b5b1ad%3A0x81eaf58b3b0ed82e!2sMashauri%2C%20Kisii!5e0!3m2!1sen!2ske!4v1711038567890!5m2!1sen!2ske"
+          title="Mwamotubi Plaza Opp Kisii Main Stage"
+          src="https://www.google.com/maps?q=0°40'20.9S+34°46'25.3E&output=embed"
           width="100%"
           height="300"
-          style={{ border: "0" }}
-          allowFullScreen=""
+          style={{ border: 0 }}
+          allowfullscreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </div>

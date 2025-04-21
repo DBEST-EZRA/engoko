@@ -4,29 +4,17 @@ import "aos/dist/aos.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import one from "./image/sam.webp";
 import two from "./image/t3.jpg";
-import three from "./image/t2.jpg";
-import four from "./image/t4.jpeg";
 
 const teamMembers = [
   {
     name: "Sam",
-    title: "Founder & CEO",
+    title: "Production Manager",
     image: one,
   },
   {
-    name: "Aisha Mohammed",
+    name: "Ezra",
     title: "Operations Manager",
     image: two,
-  },
-  {
-    name: "Thomas",
-    title: "Lead Veterinarian",
-    image: three,
-  },
-  {
-    name: "Grace Wanjiru",
-    title: "Marketing Director",
-    image: four,
   },
 ];
 
@@ -41,9 +29,9 @@ const Team = () => {
         <h2 className="text-center mb-4" style={{ color: "#890010" }}>
           Meet Our Team
         </h2>
-        <Row>
+        <Row className="justify-content-center">
           {teamMembers.map((member, index) => (
-            <Col md={3} sm={6} key={index} className="mb-4" data-aos="fade-up">
+            <Col md={4} sm={6} key={index} className="mb-4" data-aos="fade-up">
               <Card className="border-0 shadow team-card text-center">
                 <Card.Img
                   variant="top"

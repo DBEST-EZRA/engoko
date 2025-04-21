@@ -5,8 +5,8 @@ import { doc, setDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import CartHeader from "./CartHeader";
 import oneday from "./image/oneday.jpeg";
-import onemonth from "./image/twoweeks.jpeg";
-import twomonth from "./image/onemonth.jpeg";
+import onemonth from "./image/onemonth.webp";
+import twomonth from "./image/twomonths.webp";
 import layers from "./image/newchicke.webp";
 import starterfeed from "./image/starterfeed.jpg";
 

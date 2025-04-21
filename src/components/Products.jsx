@@ -5,27 +5,45 @@ import { doc, setDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import CartHeader from "./CartHeader";
 import oneday from "./image/oneday.jpeg";
-import twoweeks from "./image/twoweeks.jpeg";
-import onemonth from "./image/onemonth.jpeg";
+import onemonth from "./image/twoweeks.jpeg";
+import twomonth from "./image/onemonth.jpeg";
 
 const chicks = [
   {
-    name: "Day Old Chicks",
-    description: "A Box of 50 Healthy and vaccinated day-old chicks.",
-    price: "KSh 5,000",
+    name: "Broilers",
+    description: "Fast-growing, vaccinated, and ideal for meat production.",
+    price: "KSh 105",
     image: oneday,
   },
   {
-    name: "2 Weeks Old Chicks",
-    description: "A Box of 50 Strong and growing chicks, ready for rearing.",
-    price: "KSh 10,000",
-    image: twoweeks,
+    name: "Improved Kienyeji",
+    description: "Hardy and vaccinated, perfect for free-range rearing.",
+    price: "KSh 115",
+    image: oneday,
   },
   {
-    name: "1 Month Old Chicks",
-    description: "A Box of 50 Well-fed and vaccinated 1-month-old chicks.",
-    price: "KSh 25,000",
+    name: "Layers",
+    description: "Vaccinated and healthy, bred for excellent egg-laying.",
+    price: "KSh 150",
+    image: oneday,
+  },
+];
+
+const monthchicks = [
+  {
+    name: "One Month Old Chicks",
+    description: "Vaccinated and thriving, ready for easy farm transition.",
+    price: "KSh 300",
     image: onemonth,
+  },
+];
+
+const twomonthchicks = [
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: twomonth,
   },
 ];
 
@@ -83,9 +101,109 @@ const Products = () => {
           Our Products
         </h2>
 
-        {/* Chicks Section */}
+        <h4 className="text-center mb-4" style={{ color: "#000" }}>
+          Day Old Chicks
+        </h4>
+
+        {/* Day Old Chicks Section */}
         <Row className="g-3">
           {chicks.map((product, index) => (
+            <Col lg={4} md={6} sm={6} xs={6} key={index}>
+              <Card className="h-100 border-0 shadow">
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  alt={product.name}
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Text className="mt-auto mb-3">
+                    <strong>{product.price}</strong>
+                  </Card.Text>
+                  <Button
+                    variant={
+                      cartItems.has(product.name) ? "outline-danger" : "danger"
+                    }
+                    style={
+                      cartItems.has(product.name)
+                        ? { color: "#890010", borderColor: "#890010" }
+                        : {}
+                    }
+                    onClick={() => handleAddToCart(product)}
+                    disabled={
+                      cartItems.has(product.name) ||
+                      loadingItems.has(product.name)
+                    }
+                  >
+                    {loadingItems.has(product.name)
+                      ? "Adding..."
+                      : cartItems.has(product.name)
+                      ? "Added to Cart"
+                      : "Add to Cart"}
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+        {/* Month Old Chicks Section */}
+        <br />
+        <h4 className="text-center mb-4" style={{ color: "#000" }}>
+          Month Old Chicks
+        </h4>
+        <Row className="g-3">
+          {monthchicks.map((product, index) => (
+            <Col lg={4} md={6} sm={6} xs={6} key={index}>
+              <Card className="h-100 border-0 shadow">
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  alt={product.name}
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Text className="mt-auto mb-3">
+                    <strong>{product.price}</strong>
+                  </Card.Text>
+                  <Button
+                    variant={
+                      cartItems.has(product.name) ? "outline-danger" : "danger"
+                    }
+                    style={
+                      cartItems.has(product.name)
+                        ? { color: "#890010", borderColor: "#890010" }
+                        : {}
+                    }
+                    onClick={() => handleAddToCart(product)}
+                    disabled={
+                      cartItems.has(product.name) ||
+                      loadingItems.has(product.name)
+                    }
+                  >
+                    {loadingItems.has(product.name)
+                      ? "Adding..."
+                      : cartItems.has(product.name)
+                      ? "Added to Cart"
+                      : "Add to Cart"}
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
+        {/* Two Months Old Chicks Section */}
+        <br />
+        <h4 className="text-center mb-4" style={{ color: "#000" }}>
+          Two Months Old Chicks
+        </h4>
+        <Row className="g-3">
+          {twomonthchicks.map((product, index) => (
             <Col lg={4} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img

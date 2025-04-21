@@ -11,7 +11,7 @@ import layer from "./image/layer.webp";
 import cover3 from "./image/mommychic.webp";
 import cover4 from "./image/banana.webp";
 import eggs from "./image/eggs.webp";
-import two from "./image/tester2.jpg";
+import two from "./image/tester1.webp";
 
 const HeroSection = () => {
   useEffect(() => {

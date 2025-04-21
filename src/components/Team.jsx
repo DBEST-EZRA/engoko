@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import one from "./image/sam.webp";
-import two from "./image/t3.jpg";
+import two from "./image/ezra.webp";
 
 const teamMembers = [
   {
@@ -13,7 +13,7 @@ const teamMembers = [
   },
   {
     name: "Ezra",
-    title: "Operations Manager",
+    title: "Technical Director",
     image: two,
   },
 ];

@@ -1,19 +1,26 @@
 import React from "react";
-import heroImage from "./image/intropic.webp";
+// import heroImage from "./image/intropic.webp";
 import { Link } from "react-router-dom";
 
 const IntroSection = () => {
   return (
     <section className="container py-5">
       <div className="row align-items-center">
-        {/* Image Section */}
+        {/* Video Section */}
         <div className="col-md-6 mb-4 mb-md-0">
-          <img
-            src={heroImage}
-            alt="Intro"
-            className="img-fluid rounded-4 shadow"
-            style={{ maxHeight: "500px", objectFit: "cover", width: "100%" }}
-          />
+          <div
+            className="ratio ratio-16x9 rounded-4 shadow"
+            style={{ maxHeight: "500px", overflow: "hidden" }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/XzzmZ_kGim4?autoplay=1&loop=1&mute=1&playlist=XzzmZ_kGim4"
+              title="Intro Video"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            ></iframe>
+          </div>
         </div>
 
         {/* Text Section */}

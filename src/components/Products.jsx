@@ -36,183 +36,183 @@ import www8 from "./image/www8.webp";
 
 const solar = [
   {
-    name: "Broilers",
-    description: "Fast-growing, vaccinated, and ideal for meat production.",
-    price: "KSh 105",
+    name: "1056-Egg Automatic Incubator with 1-Year Warranty",
+    description: "",
+    price: "KSh 60,000",
     image: one,
   },
   {
-    name: "Improved Kienyeji",
-    description: "Hardy and vaccinated, perfect for free-range rearing.",
-    price: "KSh 115",
+    name: "128-Egg Fully Automatic Hatchery",
+    description: "",
+    price: "KSh 18,000",
     image: two,
   },
   {
-    name: "Layers",
-    description: "Vaccinated and healthy, bred for excellent egg-laying.",
-    price: "KSh 150",
+    name: "Small Egg Incubator for Hatching Geese, Turkey, and Quail",
+    description: "",
+    price: "KSh 13,500",
     image: three,
   },
   {
-    name: "Starter Feed 50KG",
-    description: "50KG Starter feed for chicks",
-    price: "KSh 4,100",
+    name: "300-Egg Automatic Incubator with Temperature & Humidity Control for Poultry Hatching",
+    description: "",
+    price: "KSh 52,000",
     image: four,
   },
   {
-    name: "Broilers",
-    description: "Fast-growing, vaccinated, and ideal for meat production.",
-    price: "KSh 105",
+    name: "64-Egg Fully Automatic Hatchery (Imported)",
+    description: "",
+    price: "KSh 13,500",
     image: five,
   },
   {
-    name: "Improved Kienyeji",
-    description: "Hardy and vaccinated, perfect for free-range rearing.",
-    price: "KSh 115",
+    name: "64-Egg New Model Fully Automatic Hatchery",
+    description: "",
+    price: "KSh 13,500",
     image: six,
   },
   {
-    name: "Layers",
-    description: "Vaccinated and healthy, bred for excellent egg-laying.",
-    price: "KSh 150",
+    name: "128-Egg Digital Incubator with Auto Egg Turning, Temp & Humidity Control for Poultry Hatching",
+    description: "",
+    price: "KSh 18,000",
     image: seven,
   },
   {
-    name: "Starter Feed 50KG",
-    description: "50KG Starter feed for chicks",
-    price: "KSh 4,100",
+    name: "64-Egg Solar Chicken Incubator",
+    description: "",
+    price: "KSh 13,500",
     image: eight,
   },
   {
-    name: "Broilers",
-    description: "Fast-growing, vaccinated, and ideal for meat production.",
-    price: "KSh 105",
+    name: "192-Egg Hatching Incubator with Automatic Controls & Setters",
+    description: "",
+    price: "KSh 24,000",
     image: nine,
   },
   {
-    name: "Improved Kienyeji",
-    description: "Hardy and vaccinated, perfect for free-range rearing.",
-    price: "KSh 115",
+    name: "Mini 128-Egg Automatic Incubator - New Design",
+    description: "",
+    price: "KSh 18,000",
     image: ten,
   },
   {
-    name: "Layers",
-    description: "Vaccinated and healthy, bred for excellent egg-laying.",
-    price: "KSh 150",
+    name: "64-Egg Mini Incubator with 360° Automatic Egg Turning & Humidity Control",
+    description: "",
+    price: "KSh 13,500",
     image: eleven,
   },
   {
-    name: "Starter Feed 50KG",
-    description: "50KG Starter feed for chicks",
-    price: "KSh 4,100",
+    name: "Intelligent Control Egg Incubator",
+    description: "",
+    price: "KSh 24,000",
     image: twelve,
   },
   {
-    name: "Broilers",
-    description: "Fast-growing, vaccinated, and ideal for meat production.",
-    price: "KSh 105",
+    name: "128-Egg AC/DC Automatic Incubator",
+    description: "",
+    price: "KSh 18,000",
     image: thirteen,
   },
   {
-    name: "Improved Kienyeji",
-    description: "Hardy and vaccinated, perfect for free-range rearing.",
-    price: "KSh 115",
+    name: "300-Egg Industrial Incubator with Auto Turning & Climate Control for Poultry Hatching",
+    description: "",
+    price: "KSh 52,000",
     image: fourteen,
   },
   {
-    name: "Layers",
-    description: "Vaccinated and healthy, bred for excellent egg-laying.",
-    price: "KSh 150",
+    name: "128-Egg Incubator with Automatic Turner & Temp Control for Poultry Hatching",
+    description: "",
+    price: "KSh 18,000",
     image: fifteen,
   },
 ];
 
 const mini = [
   {
-    name: "One Month Old Chicks",
-    description: "Vaccinated and thriving, ready for easy farm transition.",
-    price: "KSh 300",
+    name: "128-Egg Automatic Incubator with LED & Temperature Control",
+    description: "",
+    price: "KSh 18,000",
     image: mini1,
   },
   {
-    name: "One Month Old Chicks",
-    description: "Vaccinated and thriving, ready for easy farm transition.",
-    price: "KSh 300",
+    name: "128-Egg Automatic Poultry Incubator for Farm Breeding & Hatching",
+    description: "",
+    price: "KSh 18,000",
     image: mini2,
   },
   {
-    name: "One Month Old Chicks",
-    description: "Vaccinated and thriving, ready for easy farm transition.",
-    price: "KSh 300",
+    name: "128-Egg Incubator with Automatic Turning & Climate Control for Poultry Hatching",
+    description: "",
+    price: "KSh 18,000",
     image: mini3,
   },
   {
-    name: "One Month Old Chicks",
-    description: "Vaccinated and thriving, ready for easy farm transition.",
-    price: "KSh 300",
+    name: "128-Egg Automatic Incubator with Temperature & Humidity Control for Poultry Hatching",
+    description: "",
+    price: "KSh 18,000",
     image: mini4,
   },
 ];
 
 const commercial = [
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "1056-Egg Automatic Incubator with 1-Year Warranty",
+    description: "",
+    price: "KSh 60,000",
     image: www,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "2112-Egg Fully Automatic Incubator with Temperature Control for Poultry Hatching",
+    description: "",
+    price: "KSh 110,000",
     image: www1,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "1056-Egg Fully Automatic Poultry Hatcher with Digital Controls for Hatching Chicken, Duck, Goose, and Quail",
+    description: "",
+    price: "KSh 60,000",
     image: www2,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "528-Egg Intelligent Automatic Hatcher with Temp & Humidity Control for Poultry",
+    description: "",
+    price: "KSh 50,000",
     image: www3,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "2112-Egg Poultry Incubator with Dual Humidity & Temp Control, Coal/Electric, Auto Turning",
+    description: "",
+    price: "KSh 110,000",
     image: www4,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "1056-Egg Automatic Incubator with Temp Control & Auto Turning for Poultry Hatching",
+    description: "",
+    price: "KSh 60,000",
     image: www5,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "1056-Egg Fully Automatic Poultry Incubator with Temperature Control for Hatching",
+    description: "",
+    price: "KSh 60,000",
     image: www6,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "528-Egg Intelligent Automatic Hatcher with Temp & Humidity Control for Poultry",
+    description: "",
+    price: "KSh 50,000",
     image: www7,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "2112-Egg Poultry Incubator with Dual Humidity & Temp Control, Coal/Electric, Auto Turning",
+    description: "",
+    price: "KSh 110,000",
     image: www8,
   },
   {
-    name: "Two Months Old Chicks",
-    description: "Well-raised, vaccinated, and close to full maturity.",
-    price: "KSh 400",
+    name: "1056-Egg Fully Automatic Poultry Incubator with Temperature Control",
+    description: "",
+    price: "KSh 60,000",
     image: www9,
   },
 ];
@@ -287,8 +287,8 @@ const Products = () => {
                   style={{ height: "200px", objectFit: "cover" }}
                 />
                 <Card.Body className="d-flex flex-column">
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Text>{product.name}</Card.Text>
+                  {/* <Card.Text>{product.description}</Card.Text> */}
                   <Card.Text className="mt-auto mb-3">
                     <strong>{product.price}</strong>
                   </Card.Text>
@@ -335,8 +335,8 @@ const Products = () => {
                   style={{ height: "200px", objectFit: "cover" }}
                 />
                 <Card.Body className="d-flex flex-column">
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Text>{product.name}</Card.Text>
+                  {/* <Card.Text>{product.description}</Card.Text> */}
                   <Card.Text className="mt-auto mb-3">
                     <strong>{product.price}</strong>
                   </Card.Text>
@@ -383,8 +383,8 @@ const Products = () => {
                   style={{ height: "200px", objectFit: "cover" }}
                 />
                 <Card.Body className="d-flex flex-column">
-                  <Card.Title>{product.name}</Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
+                  <Card.Text>{product.name}</Card.Text>
+                  {/* <Card.Text>{product.description}</Card.Text> */}
                   <Card.Text className="mt-auto mb-3">
                     <strong>{product.price}</strong>
                   </Card.Text>

@@ -278,7 +278,7 @@ const Products = () => {
         {/* Mini Incubators Section */}
         <Row className="g-3">
           {mini.map((product, index) => (
-            <Col lg={4} md={6} sm={6} xs={6} key={index}>
+            <Col lg={3} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
                   variant="top"
@@ -326,7 +326,7 @@ const Products = () => {
         </h4>
         <Row className="g-3">
           {solar.map((product, index) => (
-            <Col lg={4} md={6} sm={6} xs={6} key={index}>
+            <Col lg={2} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
                   variant="top"
@@ -374,7 +374,7 @@ const Products = () => {
         </h4>
         <Row className="g-3">
           {commercial.map((product, index) => (
-            <Col lg={4} md={6} sm={6} xs={6} key={index}>
+            <Col lg={2} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
                   variant="top"

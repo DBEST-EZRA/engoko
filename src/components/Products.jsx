@@ -4,54 +4,216 @@ import { db } from "./Database/Configuration";
 import { doc, setDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import CartHeader from "./CartHeader";
-import oneday from "./image/oneday.jpeg";
-import onemonth from "./image/onemonth.webp";
-import twomonth from "./image/twomonths.webp";
-import layers from "./image/newchicke.webp";
-import starterfeed from "./image/starterfeed.jpg";
+import one from "./image/one.webp";
+import two from "./image/two.webp";
+import three from "./image/three.webp";
+import four from "./image/four.webp";
+import five from "./image/five.webp";
+import six from "./image/six.webp";
+import seven from "./image/seven.webp";
+import eight from "./image/eight.webp";
+import nine from "./image/nine.webp";
+import ten from "./image/ten.webp";
+import eleven from "./image/eleven.webp";
+import twelve from "./image/twelve.webp";
+import thirteen from "./image/thirteen.webp";
+import fourteen from "./image/fourteen.webp";
+import fifteen from "./image/fifteen.webp";
+import mini1 from "./image/mini1.webp";
+import mini2 from "./image/mini2.webp";
+import mini3 from "./image/mini3.webp";
+import mini4 from "./image/mini4.webp";
+import www from "./image/www.webp";
+import www1 from "./image/www1.webp";
+import www9 from "./image/www9.webp";
+import www2 from "./image/www2.webp";
+import www3 from "./image/www3.webp";
+import www4 from "./image/www4.webp";
+import www5 from "./image/www5.webp";
+import www6 from "./image/www6.webp";
+import www7 from "./image/www7.webp";
+import www8 from "./image/www8.webp";
 
-const chicks = [
+const solar = [
   {
     name: "Broilers",
     description: "Fast-growing, vaccinated, and ideal for meat production.",
     price: "KSh 105",
-    image: oneday,
+    image: one,
   },
   {
     name: "Improved Kienyeji",
     description: "Hardy and vaccinated, perfect for free-range rearing.",
     price: "KSh 115",
-    image: oneday,
+    image: two,
   },
   {
     name: "Layers",
     description: "Vaccinated and healthy, bred for excellent egg-laying.",
     price: "KSh 150",
-    image: layers,
+    image: three,
   },
   {
     name: "Starter Feed 50KG",
     description: "50KG Starter feed for chicks",
     price: "KSh 4,100",
-    image: starterfeed,
+    image: four,
+  },
+  {
+    name: "Broilers",
+    description: "Fast-growing, vaccinated, and ideal for meat production.",
+    price: "KSh 105",
+    image: five,
+  },
+  {
+    name: "Improved Kienyeji",
+    description: "Hardy and vaccinated, perfect for free-range rearing.",
+    price: "KSh 115",
+    image: six,
+  },
+  {
+    name: "Layers",
+    description: "Vaccinated and healthy, bred for excellent egg-laying.",
+    price: "KSh 150",
+    image: seven,
+  },
+  {
+    name: "Starter Feed 50KG",
+    description: "50KG Starter feed for chicks",
+    price: "KSh 4,100",
+    image: eight,
+  },
+  {
+    name: "Broilers",
+    description: "Fast-growing, vaccinated, and ideal for meat production.",
+    price: "KSh 105",
+    image: nine,
+  },
+  {
+    name: "Improved Kienyeji",
+    description: "Hardy and vaccinated, perfect for free-range rearing.",
+    price: "KSh 115",
+    image: ten,
+  },
+  {
+    name: "Layers",
+    description: "Vaccinated and healthy, bred for excellent egg-laying.",
+    price: "KSh 150",
+    image: eleven,
+  },
+  {
+    name: "Starter Feed 50KG",
+    description: "50KG Starter feed for chicks",
+    price: "KSh 4,100",
+    image: twelve,
+  },
+  {
+    name: "Broilers",
+    description: "Fast-growing, vaccinated, and ideal for meat production.",
+    price: "KSh 105",
+    image: thirteen,
+  },
+  {
+    name: "Improved Kienyeji",
+    description: "Hardy and vaccinated, perfect for free-range rearing.",
+    price: "KSh 115",
+    image: fourteen,
+  },
+  {
+    name: "Layers",
+    description: "Vaccinated and healthy, bred for excellent egg-laying.",
+    price: "KSh 150",
+    image: fifteen,
   },
 ];
 
-const monthchicks = [
+const mini = [
   {
     name: "One Month Old Chicks",
     description: "Vaccinated and thriving, ready for easy farm transition.",
     price: "KSh 300",
-    image: onemonth,
+    image: mini1,
+  },
+  {
+    name: "One Month Old Chicks",
+    description: "Vaccinated and thriving, ready for easy farm transition.",
+    price: "KSh 300",
+    image: mini2,
+  },
+  {
+    name: "One Month Old Chicks",
+    description: "Vaccinated and thriving, ready for easy farm transition.",
+    price: "KSh 300",
+    image: mini3,
+  },
+  {
+    name: "One Month Old Chicks",
+    description: "Vaccinated and thriving, ready for easy farm transition.",
+    price: "KSh 300",
+    image: mini4,
   },
 ];
 
-const twomonthchicks = [
+const commercial = [
   {
     name: "Two Months Old Chicks",
     description: "Well-raised, vaccinated, and close to full maturity.",
     price: "KSh 400",
-    image: twomonth,
+    image: www,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www1,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www2,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www3,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www4,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www5,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www6,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www7,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www8,
+  },
+  {
+    name: "Two Months Old Chicks",
+    description: "Well-raised, vaccinated, and close to full maturity.",
+    price: "KSh 400",
+    image: www9,
   },
 ];
 
@@ -110,12 +272,12 @@ const Products = () => {
         </h2>
 
         <h4 className="text-center mb-4" style={{ color: "#000" }}>
-          Day Old Chicks
+          Mini Incubators
         </h4>
 
-        {/* Day Old Chicks Section */}
+        {/* Mini Incubators Section */}
         <Row className="g-3">
-          {chicks.map((product, index) => (
+          {mini.map((product, index) => (
             <Col lg={4} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
@@ -157,13 +319,13 @@ const Products = () => {
           ))}
         </Row>
 
-        {/* Month Old Chicks Section */}
+        {/* Solar Egg Incubators Section */}
         <br />
         <h4 className="text-center mb-4" style={{ color: "#000" }}>
-          Month Old Chicks
+          Solar Egg Incubators
         </h4>
         <Row className="g-3">
-          {monthchicks.map((product, index) => (
+          {solar.map((product, index) => (
             <Col lg={4} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img
@@ -205,13 +367,13 @@ const Products = () => {
           ))}
         </Row>
 
-        {/* Two Months Old Chicks Section */}
+        {/* Commercial Egg Incubators Section */}
         <br />
         <h4 className="text-center mb-4" style={{ color: "#000" }}>
-          Two Months Old Chicks
+          Commercial Egg Incubators
         </h4>
         <Row className="g-3">
-          {twomonthchicks.map((product, index) => (
+          {commercial.map((product, index) => (
             <Col lg={4} md={6} sm={6} xs={6} key={index}>
               <Card className="h-100 border-0 shadow">
                 <Card.Img

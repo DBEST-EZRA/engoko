@@ -118,14 +118,21 @@ const Products = () => {
   };
 
   const handleButtonClick = async (option) => {
-    // Call handleAddToCart function
+    if (!user) {
+      await handleAddToCart({
+        name: option.name,
+        description: "",
+        price: option.price,
+      });
+      return;
+    }
+
     await handleAddToCart({
       name: option.name,
       description: "",
       price: option.price,
     });
 
-    // Mark this button as added
     setAddedButtons((prev) => new Set([...prev, option.name]));
   };
 
@@ -148,11 +155,11 @@ const Products = () => {
                   alt="Incubator Main"
                   className="w-100"
                   style={{
-                    height: "auto", // ✅ keeps full image visible
+                    height: "auto",
                     maxHeight: "300px",
-                    objectFit: "contain", // ✅ no cropping, shows full image
+                    objectFit: "contain",
                     borderRadius: "12px",
-                    background: "#f8f8f8", // soft background for portrait images
+                    background: "#f8f8f8",
                     padding: "8px",
                   }}
                 />
@@ -328,7 +335,7 @@ const Products = () => {
                     alt={`Feature ${i + 1}`}
                     style={{
                       width: "100%",
-                      height: "auto", // ✅ no cropping, image keeps original ratio
+                      height: "auto",
                       borderRadius: "10px",
                       display: "block",
                     }}

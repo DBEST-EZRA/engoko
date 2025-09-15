@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import { db } from "./Database/Configuration";
 import { doc, setDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import CartHeader from "./CartHeader";
-import one from "./image/one.jpg";
 import "./Products.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import {
+  ShoppingCart,
+  Check,
+  CheckCircle,
+  BatteryCharging,
+  Leaf,
+  Wrench,
+  ThermometerSun,
+  Power,
+} from "lucide-react";
 
 // 🔥 Import your feature & gallery images
 import feature1 from "./image/four.jpg";
@@ -26,27 +35,6 @@ import incubatorTop from "./image/one.jpg";
 import incubatorBottom1 from "./image/two.jpg";
 import incubatorBottom2 from "./image/three.jpg";
 
-const solar = [
-  {
-    name: "64 Eggs Incubator",
-    description: "",
-    price: "KSh 12,500",
-    image: one,
-  },
-  {
-    name: "128 Eggs Incubator",
-    description: "",
-    price: "KSh 16,999",
-    image: one,
-  },
-  {
-    name: "192 Eggs Incubator",
-    description: "",
-    price: "KSh 19,999",
-    image: one,
-  },
-];
-
 const Products = () => {
   const [user, setUser] = useState(null);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -54,6 +42,7 @@ const Products = () => {
   const [loadingItems, setLoadingItems] = useState(new Set());
 
   const [isMobile, setIsMobile] = useState(false);
+  const [addedButtons, setAddedButtons] = useState(new Set());
 
   const featureImages = [
     feature1,
@@ -66,6 +55,16 @@ const Products = () => {
     feature8,
     feature9,
     feature10,
+  ];
+
+  const incubatorOptions = [
+    { name: "64 Eggs Incubator", price: "KSh 12,500" },
+    { name: "128 Eggs Incubator", price: "KSh 16,999" },
+    { name: "192 Eggs Incubator", price: "KSh 19,999" },
+    { name: "256 Eggs Incubator", price: "KSh 25,000" },
+    { name: "320 Eggs Incubator", price: "KSh 28,000" },
+    { name: "528 Eggs Incubator", price: "KSh 49,999" },
+    { name: "204 Eggs Incubator", price: "KSh 28,000" },
   ];
 
   useEffect(() => {
@@ -118,57 +117,165 @@ const Products = () => {
     }
   };
 
+  const handleButtonClick = async (option) => {
+    // Call handleAddToCart function
+    await handleAddToCart({
+      name: option.name,
+      description: "",
+      price: option.price,
+    });
+
+    // Mark this button as added
+    setAddedButtons((prev) => new Set([...prev, option.name]));
+  };
+
   return (
     <section className="py-1">
       <Container>
         <CartHeader />
 
-        {/* Solar Egg Incubators Section */}
-        <br />
-        <h4 className="text-center mb-4" style={{ color: "#000" }}>
-          Solar Egg Incubators
-        </h4>
-        <Row className="g-3">
-          {solar.map((product, index) => (
-            <Col lg={2} md={6} sm={6} xs={6} key={index}>
-              <Card className="h-100 border-0 shadow">
-                <Card.Img
-                  variant="top"
-                  src={product.image}
-                  alt={product.name}
-                  style={{ height: "200px", objectFit: "cover" }}
+        {/* 🔥 INCUBATOR GALLERY + TEXT SECTION */}
+        <div className="my-5">
+          <Row className="align-items-center">
+            {/* LEFT: Image Grid */}
+            <Col lg={6} className="mb-4">
+              <div
+                className="d-grid gap-2"
+                style={{ gridTemplateRows: "auto auto" }}
+              >
+                <img
+                  src={incubatorTop}
+                  alt="Incubator Main"
+                  className="w-100"
+                  style={{
+                    height: "auto", // ✅ keeps full image visible
+                    maxHeight: "300px",
+                    objectFit: "contain", // ✅ no cropping, shows full image
+                    borderRadius: "12px",
+                    background: "#f8f8f8", // soft background for portrait images
+                    padding: "8px",
+                  }}
                 />
-                <Card.Body className="d-flex flex-column">
-                  <Card.Text>{product.name}</Card.Text>
-                  <Card.Text className="mt-auto mb-3">
-                    <strong>{product.price}</strong>
-                  </Card.Text>
-                  <Button
-                    variant={
-                      cartItems.has(product.name) ? "outline-danger" : "danger"
-                    }
-                    style={
-                      cartItems.has(product.name)
-                        ? { color: "#890010", borderColor: "#890010" }
-                        : {}
-                    }
-                    onClick={() => handleAddToCart(product)}
-                    disabled={
-                      cartItems.has(product.name) ||
-                      loadingItems.has(product.name)
-                    }
-                  >
-                    {loadingItems.has(product.name)
-                      ? "Adding..."
-                      : cartItems.has(product.name)
-                      ? "Added to Cart"
-                      : "Add to Cart"}
-                  </Button>
-                </Card.Body>
-              </Card>
+                <div
+                  className="d-grid gap-2"
+                  style={{ gridTemplateColumns: "1fr 1fr" }}
+                >
+                  {[incubatorBottom1, incubatorBottom2].map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`Incubator ${i + 2}`}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        maxHeight: "150px",
+                        objectFit: "contain",
+                        borderRadius: "12px",
+                        background: "#f8f8f8",
+                        padding: "6px",
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
             </Col>
-          ))}
-        </Row>
+
+            {/* RIGHT: Text + Features */}
+            <Col lg={6}>
+              <h3 className="mb-3" style={{ color: "maroon" }}>
+                SOLAR (DC) / ELECTRIC (AC) EGG INCUBATOR
+              </h3>
+              <p style={{ fontSize: "1rem", color: "#000", lineHeight: "1.6" }}>
+                The perfect blend of advanced technology and sustainable energy,
+                designed to give farmers and breeders consistent, high-quality
+                hatch results. Equipped with a digital control panel, automatic
+                turning, and strong insulation for maximum hatch success.
+              </p>
+
+              {/* Key Features */}
+              <ul style={{ listStyle: "none", padding: 0 }}>
+                <li className="mb-2 d-flex align-items-center">
+                  <ThermometerSun size={18} color="maroon" className="me-2" />
+                  <span>Precise digital temperature & humidity control</span>
+                </li>
+                <li className="mb-2 d-flex align-items-center">
+                  <CheckCircle size={18} color="maroon" className="me-2" />
+                  <span>Automatic egg turning for uniform hatching</span>
+                </li>
+                <li className="mb-2 d-flex align-items-center">
+                  <BatteryCharging size={18} color="maroon" className="me-2" />
+                  <span>DC/AC Power + optional battery backup</span>
+                </li>
+                <li className="mb-2 d-flex align-items-center">
+                  <Leaf size={18} color="maroon" className="me-2" />
+                  <span>Eco-friendly design with solar compatibility</span>
+                </li>
+                <li className="mb-2 d-flex align-items-center">
+                  <Wrench size={18} color="maroon" className="me-2" />
+                  <span>Easy maintenance with removable components</span>
+                </li>
+                <li className="mb-2 d-flex align-items-center">
+                  <Power size={18} color="maroon" className="me-2" />
+                  <span>
+                    Reliable 24/7 operation for sensitive hatching periods
+                  </span>
+                </li>
+              </ul>
+
+              {/* Incubator Type Buttons */}
+              <div className="mt-4">
+                <p style={{ fontWeight: "bold", color: "#000" }}>
+                  Choose Incubator Type:
+                </p>
+                <div className="d-flex flex-wrap gap-2">
+                  {incubatorOptions.map((option, i) => {
+                    const isAdded = addedButtons.has(option.name);
+
+                    return (
+                      <Button
+                        key={i}
+                        variant={isAdded ? "success" : "outline-dark"}
+                        style={{
+                          borderRadius: "30px",
+                          borderColor: isAdded ? "green" : "maroon",
+                          color: isAdded ? "white" : "maroon",
+                          fontWeight: "500",
+                          backgroundColor: isAdded ? "green" : "transparent",
+                          transition: "0.3s ease-in-out",
+                        }}
+                        onClick={() => handleButtonClick(option)}
+                        disabled={isAdded} // disable after adding to cart
+                        onMouseEnter={(e) => {
+                          if (!isAdded) {
+                            e.target.style.backgroundColor = "maroon";
+                            e.target.style.color = "white";
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (!isAdded) {
+                            e.target.style.backgroundColor = "transparent";
+                            e.target.style.color = "maroon";
+                          }
+                        }}
+                      >
+                        {isAdded ? (
+                          <>
+                            <Check size={16} className="me-1" /> Added to Cart
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingCart size={16} className="me-1" />{" "}
+                            {option.name} - {option.price}
+                          </>
+                        )}
+                      </Button>
+                    );
+                  })}
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </div>
 
         {/* 🔥 FEATURES SECTION */}
         <div className="my-5">
@@ -231,67 +338,6 @@ const Products = () => {
               ))}
             </Slider>
           )}
-        </div>
-
-        {/* 🔥 INCUBATOR GALLERY + TEXT SECTION */}
-        <div className="my-5">
-          <Row className="align-items-center">
-            {/* Left: 3-image grid layout */}
-            <Col lg={6} className="mb-3">
-              <div
-                className="d-grid gap-2"
-                style={{ gridTemplateRows: "1fr 1fr" }}
-              >
-                <img
-                  src={incubatorTop}
-                  alt="Incubator 1"
-                  className="w-100 mb-2"
-                  style={{
-                    height: "200px",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
-                <div
-                  className="d-grid gap-2"
-                  style={{ gridTemplateColumns: "1fr 1fr" }}
-                >
-                  <img
-                    src={incubatorBottom1}
-                    alt="Incubator 2"
-                    style={{
-                      width: "100%",
-                      height: "150px",
-                      objectFit: "cover",
-                      borderRadius: "10px",
-                    }}
-                  />
-                  <img
-                    src={incubatorBottom2}
-                    alt="Incubator 3"
-                    style={{
-                      width: "100%",
-                      height: "150px",
-                      objectFit: "cover",
-                      borderRadius: "10px",
-                    }}
-                  />
-                </div>
-              </div>
-            </Col>
-
-            {/* Right: Text section */}
-            <Col lg={6}>
-              <h4 className="mb-3">Why Choose Our Incubators</h4>
-              <p style={{ fontSize: "1rem", lineHeight: "1.6" }}>
-                {/* Add your detailed description here */}
-                Our incubators are designed with precision to give you the
-                highest hatch rate. Add your custom description here to explain
-                the features, benefits, and why customers should choose your
-                products.
-              </p>
-            </Col>
-          </Row>
         </div>
       </Container>
 

@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
-import { Navbar, Nav, Container } from "react-bootstrap";
+// import { Navbar, Nav, Container } from "react-bootstrap";
 import {
   FaTiktok,
   FaInstagram,
@@ -80,31 +80,29 @@ const CustomNavbar = () => {
         </div>
       </div>
 
-      {/* Navbar */}
-      <Navbar
+      {/* <Navbar
         expand="lg"
         style={{ backgroundColor: "#F3F3F3" }}
         variant="dark"
         className="py-3 custom-navbar"
-      >
-        <Container>
-          {/* Brand Logo */}
-          <Navbar.Brand href="/">
+      > */}
+      {/* <Container> */}
+      {/* <Navbar.Brand href="/">
             <img
               src={process.env.PUBLIC_URL + "/engoko.png"}
               alt="ENGOKO Logo"
               style={{ width: "70px", height: "70px", objectFit: "cover" }}
             />
-          </Navbar.Brand>
+          </Navbar.Brand> */}
 
-          {/* Mobile Toggle Button */}
-          <Navbar.Toggle
+      {/* Mobile Toggle Button */}
+      {/* <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             style={{ border: "none" }}
             className="custom-toggler"
-          />
+          /> */}
 
-          <Navbar.Collapse id="basic-navbar-nav">
+      {/* <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {[
                 { name: "Home", link: "/" },
@@ -129,9 +127,9 @@ const CustomNavbar = () => {
                 </Nav.Link>
               ))}
             </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          </Navbar.Collapse> */}
+      {/* </Container>
+      </Navbar> */}
     </>
   );
 };

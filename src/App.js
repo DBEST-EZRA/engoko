@@ -1,14 +1,14 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Products from "./components/Products";
 import CustomNavbar from "./components/CustomNavbar";
 import Footer from "./components/Footer";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Gallery from "./components/Gallery";
-import Products from "./components/Products";
-import Team from "./components/Team";
-import Blogs from "./components/Blogs";
+// import Home from "./components/Home";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// import Gallery from "./components/Gallery";
+// import Team from "./components/Team";
+// import Blogs from "./components/Blogs";
 
 const Layout = ({ children }) => {
   return (
@@ -25,6 +25,14 @@ function App() {
     <Router>
       <Routes>
         <Route
+          path="/"
+          element={
+            <Layout>
+              <Products />
+            </Layout>
+          }
+        />
+        {/* <Route
           path="/"
           element={
             <Layout>
@@ -79,7 +87,7 @@ function App() {
               <Gallery />
             </Layout>
           }
-        />
+        /> */}
       </Routes>
     </Router>
   );

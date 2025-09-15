@@ -78,8 +78,6 @@ const CartHeader = () => {
   }, [user]);
 
   ///////////////////////
-  ///////////////////////
-  ///////////////////////
   const [showCheckout, setShowCheckout] = useState(false);
 
   const [checkoutDetails, setCheckoutDetails] = useState({
@@ -151,10 +149,6 @@ const CartHeader = () => {
     setShowCheckedOutOrders(true);
   };
 
-  ///////////////////////
-  ///////////////////////
-  ///////////////////////
-
   // Increase Quantity
   const increaseQuantity = (id) => {
     setCartItems((prev) =>
@@ -203,81 +197,95 @@ const CartHeader = () => {
   };
 
   return (
-    <div className="cart-header d-flex justify-content-end align-items-center gap-3 p-2">
+    <div
+      className="cart-header d-flex justify-content-end align-items-center gap-3 p-1 shadow-sm"
+      style={{
+        backgroundColor: "#fff",
+        minHeight: "60px",
+        borderBottom: "1px solid #ddd",
+      }}
+    >
       {/* User Profile */}
-      <div className="text-center">
+      <div className="d-flex align-items-center gap-2">
         {user ? (
           <>
             <img
               src={user.photoURL || "default-profile.png"}
               alt="Profile"
-              className="user-profile-img"
+              className="rounded-circle"
+              style={{
+                width: "32px",
+                height: "32px",
+                objectFit: "cover",
+                cursor: "pointer",
+              }}
               title={user.displayName}
             />
-            <div className="small-text">{user.displayName}</div>
-            <button className="logout-btn" onClick={handleLogout}>
+            <span className="small fw-semibold">{user.displayName}</span>
+            <button
+              className="btn btn-sm btn-outline-secondary"
+              onClick={handleLogout}
+            >
               Logout
             </button>
           </>
         ) : (
           <>
             <FaUser
-              className="icon small-icon"
+              className="icon"
+              style={{ fontSize: "1.2rem", cursor: "pointer" }}
               title="Login"
               onClick={handleGoogleSignIn}
             />
-            <div
-              className="small-text link-text"
+            <span
+              className="small text-primary"
+              style={{ cursor: "pointer" }}
               onClick={handleGoogleSignIn}
-              style={{ cursor: "pointer", color: "blue" }}
             >
               Login
-            </div>
+            </span>
           </>
         )}
       </div>
 
       {/* Cart Icon */}
-      <div className="text-center position-relative">
-        <FaShoppingCart
-          className="icon small-icon"
-          title="Cart"
-          onClick={() => setShowCart(true)}
-        />
-        <Badge
-          bg="danger"
-          className="position-absolute top-0 start-100 translate-middle"
-        >
-          {cartCount}
-        </Badge>
-        <div
-          className="small-text link-text"
-          onClick={() => setShowCart(true)}
-          style={{ cursor: "pointer", color: "blue" }}
-        >
-          Cart
-        </div>
+      <div
+        className="d-flex align-items-center position-relative"
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowCart(true)}
+      >
+        <FaShoppingCart style={{ fontSize: "1.3rem" }} />
+        {cartCount > 0 && (
+          <Badge
+            bg="danger"
+            pill
+            className="position-absolute top-0 start-100 translate-middle"
+            style={{ fontSize: "0.65rem" }}
+          >
+            {cartCount}
+          </Badge>
+        )}
+        <span className="small ms-1">Cart</span>
       </div>
 
       {/* Orders Icon */}
-      <div className="text-center position-relative">
-        <FaClipboardList
-          className="icon small-icon"
-          title="My Orders"
-          onClick={handleShowCheckedOutOrders}
-        />
-        <Badge
-          bg="danger"
-          className="position-absolute top-0 start-100 translate-middle"
-        >
-          {checkedOutOrderCount}
-        </Badge>
-        <div
-          className="small-text link-text"
-          onClick={handleShowCheckedOutOrders}
-        >
-          Orders
-        </div>
+      <div
+        className="d-flex align-items-center position-relative"
+        style={{ cursor: "pointer" }}
+        onClick={handleShowCheckedOutOrders}
+      >
+        <FaClipboardList style={{ fontSize: "1.3rem" }} />
+        {checkedOutOrderCount > 0 && (
+          <Badge
+            bg="danger"
+            pill
+            className="position-absolute top-0 start-100 translate-middle"
+            style={{ fontSize: "0.65rem" }}
+          >
+            {checkedOutOrderCount}
+          </Badge>
+        )}
+        <span className="small ms-1">Orders</span>
       </div>
 
       {/* Cart Drawer */}

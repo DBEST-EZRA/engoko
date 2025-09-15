@@ -1,0 +1,12 @@
+.features-carousel {
+  animation: scroll-x 10s linear infinite alternate;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

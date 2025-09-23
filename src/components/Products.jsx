@@ -155,6 +155,7 @@ Features:
       });
 
       setCartItems((prev) => new Set([...prev, product.name]));
+      setSelectedProduct(null);
     } catch (error) {
       console.error("Error adding to cart:", error);
     } finally {
@@ -296,9 +297,7 @@ Features:
                               padding: "10px 20px",
                               borderRadius: "8px",
                             }}
-                            onClick={() =>
-                              alert(`Buying ${selectedProduct.name}`)
-                            }
+                            onClick={() => handleAddToCart(selectedProduct)}
                           >
                             Buy Now
                           </button>

@@ -36,9 +36,9 @@ import incubatorBottom2 from "./image/three.jpg";
 
 import eggs64 from "./image/64eggs.jpg";
 import eggs128 from "./image/128eggs.png";
-import eggs192 from "./image/192eggs.jpg";
+import eggs192 from "./image/shopping.webp";
 import eggs204 from "./image/204eggs.jpg";
-import eggs256 from "./image/256eggs.jpeg";
+import eggs256 from "./image/shopping.webp";
 import eggs528 from "./image/528eggs.jpg";
 import eggs300 from "./image/300eggs.jpg";
 import eggs1056 from "./image/1056eggs.jpg";

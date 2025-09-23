@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
-const messages = ["Payment on Delivery", "Order Now"];
+const messages = ["Payment after Delivery", "Order Now"];
 
 const CustomNavbar = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
